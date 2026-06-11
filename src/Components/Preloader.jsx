@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const zodiacSigns = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
 const VrihadVastuPreloader = ({ setLoading }) => {
   const [counter, setCounter] = useState(0);
@@ -35,7 +35,7 @@ const VrihadVastuPreloader = ({ setLoading }) => {
 
       <div className="relative flex items-center justify-center">
         
-        {/* 2. Rotating Zodiac Ring (Simplified Hero Reference) */}
+        {/* 2. Rotating Directional Ring */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -58,21 +58,21 @@ const VrihadVastuPreloader = ({ setLoading }) => {
             />
           </svg>
 
-          {/* Zodiac Symbols Fading In Staggered */}
-          {zodiacSigns.map((sign, i) => {
-            const rotation = i * 30;
+          {/* Vastu Directions Fading In Staggered */}
+          {directions.map((dir, i) => {
+            const rotation = i * 45;
             return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: i * 0.1 }}
-                className="absolute text-[#C9A14A] text-lg font-serif"
+                className="absolute text-[#C9A14A] text-sm font-bold tracking-widest font-['Cinzel']"
                 style={{
                   transform: `rotate(${rotation}deg) translateY(-120px) rotate(-${rotation}deg)`,
                 }}
               >
-                {sign}
+                {dir}
               </motion.div>
             );
           })}
@@ -105,7 +105,7 @@ const VrihadVastuPreloader = ({ setLoading }) => {
           animate={{ opacity: 1 }}
           className="font-['Inter'] text-[10px] tracking-[0.5em] text-gray-400 uppercase mb-2"
         >
-          Aligning with Cosmos
+          Aligning Space and Energy
         </motion.span>
         <div className="font-['Cinzel'] text-[#C9A14A] text-xl font-light">
           {counter}%

@@ -14,7 +14,7 @@ const ProcessSection = () => {
     {
       title: "Scan",
       icon: Radar,
-      desc: "Comprehensive mapping of subterranean water veins and celestial alignments.",
+      desc: "Comprehensive mapping of subterranean water veins and directional alignments.",
       delay: 0.2
     },
     {

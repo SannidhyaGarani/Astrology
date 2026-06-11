@@ -6,7 +6,7 @@ const VrihadVastuNotFound = () => {
   return (
     <section className="relative min-h-screen bg-[#FDFCF9] overflow-hidden flex items-center justify-center font-['Inter'] px-6 pt-32">
       
-      {/* 🌌 CELESTIAL BACKGROUND ELEMENTS */}
+      {/* 🌌 ENERGY GRID BACKGROUND ELEMENTS */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Soft radial glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(201,161,74,0.08),transparent_70%)] rounded-full blur-3xl" />
@@ -63,11 +63,11 @@ const VrihadVastuNotFound = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl lg:text-3xl font-['Cinzel'] text-[#1A1A1A] mb-4 uppercase tracking-widest">
-            Celestial Misalignment
+            Spatial Misalignment
           </h2>
           <p className="text-gray-500 font-light text-lg mb-12 leading-relaxed max-w-md mx-auto">
             The coordinates you are seeking have shifted in the energy grid. 
-            This path is currently unmapped in our cosmic directory.
+            This path is currently unmapped in our directional directory.
           </p>
 
           {/* 🔘 ACTION BUTTONS */}

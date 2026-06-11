@@ -50,7 +50,7 @@ const AboutLegacy = () => {
         {/* LEFT SIDE: Founder Portrait (PREMIUM RE-DESIGN) */}
         <div className="lg:col-span-5 relative group">
 
-          {/* Subtle Rotating Mandella Watermark */}
+          {/* Subtle Rotating Mandala Watermark */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}

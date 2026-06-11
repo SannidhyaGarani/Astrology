@@ -2,39 +2,36 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const zodiacSigns = [
-  "♈", "♉", "♊", "♋", "♌", "♍",
-  "♎", "♏", "♐", "♑", "♒", "♓"
-];
+const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
-const AstrologyHero = () => {
+const VastuHero = () => {
   const { scrollY } = useScroll();
 
   // Parallax depths
   const bgY = useTransform(scrollY, [0, 1000], [0, -150]);
-  const starsY = useTransform(scrollY, [0, 1000], [0, -80]);
-  const astrolabeRotate = useTransform(scrollY, [0, 1000], [0, 45]);
+  const elementsY = useTransform(scrollY, [0, 1000], [0, -80]);
+  const compassRotate = useTransform(scrollY, [0, 1000], [0, 45]);
 
   return (
     <section className="relative min-h-screen bg-[#FDFCF9] overflow-hidden flex items-center pt-24 font-['Inter']">
 
       {/* 🌌 ENHANCED BACKGROUND IMAGE + GRADIENTS */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 pointer-events-none">
-        {/* Deep, more visible astrology/celestial texture */}
+        {/* Architectural/Minimalist texture */}
         <div
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2070')] bg-cover bg-center opacity-30 mix-blend-multiply"
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070')] bg-cover bg-center opacity-10 mix-blend-multiply"
         />
         {/* Soft radial vignette to keep text readable */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#FDFCF9_80%)]" />
         {/* Golden ambient glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,161,74,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,161,74,0.1),transparent_50%)]" />
       </motion.div>
 
-      {/* ✨ PREMIUM FLOATING PARTICLES (Stardust) */}
-      <motion.div style={{ y: starsY }} className="absolute inset-0 z-0 pointer-events-none">
-        {[...Array(35)].map((_, i) => (
+      {/* ✨ PREMIUM FLOATING PARTICLES (Energy Flow) */}
+      <motion.div style={{ y: elementsY }} className="absolute inset-0 z-0 pointer-events-none">
+        {[...Array(25)].map((_, i) => (
           <motion.div
-            key={`star-${i}`}
+            key={`atom-${i}`}
             className="absolute bg-[#C9A14A] rounded-full"
             style={{
               width: Math.random() * 2 + 1 + 'px',
@@ -44,7 +41,7 @@ const AstrologyHero = () => {
             }}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{
-              opacity: [0, 0.8, 0],
+              opacity: [0, 0.6, 0],
               scale: [0.5, 1.2, 0.5],
               y: [0, -40, 0],
             }}
@@ -70,20 +67,20 @@ const AstrologyHero = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="h-[1px] w-12 bg-[#C9A14A]"></div>
               <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] uppercase font-semibold">
-                The Cosmic Intelligence
+                The Science of Space
               </span>
             </div>
 
             <h1 className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-[#1A1A1A]">
-              Discover Your <br />
+              Harmonize Your <br />
               <span className="italic text-[#C9A14A] font-light">
-                Celestial Path
+                Living Architecture
               </span>
             </h1>
 
             <p className="mt-8 text-gray-600 text-lg max-w-lg leading-relaxed font-light">
-              Experience the wisdom of the universe through personalized astrology,
-              cosmic alignments, and deep celestial insights crafted exclusively for your life journey.
+              Experience the ancient wisdom of Vastu Shastra integrated with modern spatial engineering,
+              creating balanced energy fields tailored for your prosperity and wellness.
             </p>
           </motion.div>
 
@@ -96,18 +93,18 @@ const AstrologyHero = () => {
           >
             <Link to="/contact">
               <button className="px-10 py-4 bg-[#1A1A1A] text-white font-['Cinzel'] tracking-widest text-sm shadow-2xl shadow-[#1A1A1A]/20 hover:bg-[#C9A14A] hover:shadow-[#C9A14A]/30 transition-all duration-500">
-                Get Your Reading
+                Inquire Now
               </button>
             </Link>
             <Link to="/services">
               <button className="px-10 py-4 border border-[#C9A14A] text-[#C9A14A] font-['Cinzel'] tracking-widest text-sm hover:bg-[#C9A14A] hover:text-white transition-all duration-500">
-                Explore Zodiac
+                Our Services
               </button>
             </Link>
           </motion.div>
         </div>
 
-        {/* 🌙 RIGHT SIDE: PREMIUM ASTROLABE / ZODIAC WHEEL */}
+        {/* 🌙 RIGHT SIDE: PREMIUM VASTU COMPASS / ENERGY WHEEL */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -116,7 +113,7 @@ const AstrologyHero = () => {
         >
           {/* Main Rotating Container */}
           <motion.div
-            style={{ rotate: astrolabeRotate }}
+            style={{ rotate: compassRotate }}
             className="relative w-full h-full rounded-full flex items-center justify-center"
           >
             {/* 1. Outer Ring (Static frame) */}
@@ -145,13 +142,13 @@ const AstrologyHero = () => {
               ))}
             </motion.div>
 
-            {/* ZODIAC SIGNS (Mapped to outer ring) */}
-            {zodiacSigns.map((sign, i) => {
-              const rotation = i * 30;
+            {/* VASTU DIRECTIONS (Mapped to outer ring) */}
+            {directions.map((dir, i) => {
+              const rotation = i * 45;
               return (
                 <div
-                  key={`sign-${i}`}
-                  className="absolute w-10 h-10 flex items-center justify-center text-[#C9A14A] text-2xl"
+                  key={`dir-${i}`}
+                  className="absolute w-12 h-12 flex items-center justify-center text-[#C9A14A] text-xl font-bold font-['Cinzel']"
                   style={{
                     // Position at center
                     top: "50%",
@@ -161,7 +158,7 @@ const AstrologyHero = () => {
                   }}
                 >
                   <span className="hover:scale-125 hover:text-[#1A1A1A] transition-transform cursor-default duration-300 drop-shadow-md">
-                    {sign}
+                    {dir}
                   </span>
                 </div>
               );
@@ -173,7 +170,7 @@ const AstrologyHero = () => {
                 key={`tick-${i}`}
                 className="absolute w-[1px] bg-[#C9A14A]/40"
                 style={{
-                  height: i % 6 === 0 ? '12px' : '6px',
+                  height: i % 9 === 0 ? '12px' : '6px',
                   top: 0,
                   left: "50%",
                   transformOrigin: "0 275px", // Half of max-w-[550px]
@@ -182,32 +179,34 @@ const AstrologyHero = () => {
               />
             ))}
 
-            {/* CENTER: Glowing Sun & Orbit */}
+            {/* CENTER: Geometric Mandala/Pillar */}
             <div className="absolute w-28 h-28 rounded-full border border-[#C9A14A]/30 flex items-center justify-center bg-white/50 backdrop-blur-md shadow-[0_0_80px_rgba(201,161,74,0.3)]">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#C9A14A] to-[#E5C77A] shadow-inner" />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#C9A14A] to-[#E5C77A] shadow-inner flex items-center justify-center">
+                 <div className="w-6 h-6 border-2 border-white/30 rotate-45" />
+              </div>
 
-              {/* Orbiting Moon/Planet */}
+              {/* Orbiting Energy Point */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 className="absolute w-full h-full"
               >
-                <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-3 h-3 bg-[#1A1A1A] rounded-full" />
+                <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-3 h-3 bg-[#1A1A1A] rounded-full shadow-[0_0_10px_#C9A14A]" />
               </motion.div>
             </div>
           </motion.div>
 
-          {/* FLOATING DATA CARDS (Glassmorphism) */}
+          {/* FLOATING DATA CARDS (Energy Metrics) */}
           <motion.div
             animate={{ y: [-8, 8, -8] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-8 right-0 lg:right-[-40px] bg-white/60 backdrop-blur-xl border border-[#C9A14A]/30 px-6 py-4 shadow-2xl z-20"
           >
             <p className="text-[10px] tracking-[0.2em] text-gray-500 font-['Cinzel'] uppercase mb-1">
-              Current Transit
+              Primary Axis
             </p>
             <p className="text-xl text-[#1A1A1A] font-['Cormorant_Garamond'] font-semibold flex items-center gap-2">
-              Venus in Taurus <span className="text-[#C9A14A]">♀</span>
+              North-East <span className="text-[#C9A14A] text-sm">(Ishanya)</span>
             </p>
           </motion.div>
 
@@ -217,10 +216,10 @@ const AstrologyHero = () => {
             className="absolute bottom-16 left-0 lg:left-[-40px] bg-white/60 backdrop-blur-xl border border-[#C9A14A]/30 px-6 py-4 shadow-2xl z-20"
           >
             <p className="text-[10px] tracking-[0.2em] text-gray-500 font-['Cinzel'] uppercase mb-1">
-              Moon Phase
+              Energy Status
             </p>
             <p className="text-xl text-[#1A1A1A] font-['Cormorant_Garamond'] font-semibold flex items-center gap-2">
-              Waxing Crescent <span className="text-[#C9A14A]">☽</span>
+              Brahmasthan Pure <span className="text-[#C9A14A]">✧</span>
             </p>
           </motion.div>
 
@@ -231,4 +230,4 @@ const AstrologyHero = () => {
   );
 };
 
-export default AstrologyHero;
+export default VastuHero;

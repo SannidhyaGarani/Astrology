@@ -128,7 +128,7 @@ const testimonials = [
     rating: 5
   },
   {
-    quote: "We saw a 30% increase in team output after the celestial alignment of our office. It sounds like magic, but the metrics don't lie.",
+    quote: "We saw a 30% increase in team output after the Vastu alignment of our office. It sounds like magic, but the metrics don't lie.",
     author: "Marcus Aurelius",
     role: "Private Equity",
     rating: 5

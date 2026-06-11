@@ -124,7 +124,7 @@ const VrihadVastuAboutPage = () => {
                initial={{ opacity: 0, scale: 0.8 }}
                whileInView={{ opacity: 1, scale: 1 }}
                viewport={{ once: true }}
-               className="aspect-square bg-[url('img/ast.jpg')] bg-cover bg-center border-[12px] border-white shadow-2xl relative z-10"
+               className="aspect-square bg-[url('https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070')] bg-cover bg-center border-[12px] border-white shadow-2xl relative z-10"
              /></div>
         </div>
       </section>

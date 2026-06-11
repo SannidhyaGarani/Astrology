@@ -61,7 +61,7 @@ const EarthEnergeticsLab = () => {
       )
     },
     grids: {
-      title: "Celestial Grids",
+      title: "Directional Grids",
       subtitle: "Hartmann & Curry Nets",
       description: "The Earth is woven with invisible electromagnetic threads. We map the intersections of these global nets to ensure your living spaces avoid the 'Stress Knots' where energies stagnate.",
       stats: ["Curry Diagonal Mapping", "Hartmann Global Lattice", "Vortex Neutralization"],
@@ -82,7 +82,7 @@ const EarthEnergeticsLab = () => {
     healing: {
       title: "Etheric Clearing",
       subtitle: "Vibrational Land Reset",
-      description: "Land retains the memory of history. Our clearing rituals perform a 'Celestial Reset,' removing dense imprints and restoring the land's original, high-vibrational state for prosperity.",
+      description: "Land retains the memory of history. Our clearing rituals perform a 'Vastu Reset,' removing dense imprints and restoring the land's original, high-vibrational state for prosperity.",
       stats: ["Anamnestic Clearing", "Pranic Infusion", "Harmonic Stabilization"],
       icon: <Sparkles className="w-12 h-12 text-[#C9A14A]/20 absolute top-4 right-4" />,
       visual: (
@@ -111,7 +111,7 @@ const EarthEnergeticsLab = () => {
               <span className="font-['Cinzel'] text-[10px] font-bold uppercase tracking-[0.5em] text-[#C9A14A]">
                 The Diagnostic Lab
               </span>
-              <h2 className="text-white font-['Cormorant_Garamond'] text-3xl mt-2 italic">Celestial Auditing</h2>
+              <h2 className="text-white font-['Cormorant_Garamond'] text-3xl mt-2 italic">Vastu Auditing</h2>
             </div>
             
             <div className="flex-1">
@@ -122,7 +122,7 @@ const EarthEnergeticsLab = () => {
 
             <div className="p-8 bg-[#C9A14A]/5">
                <p className="text-[10px] font-['Inter'] text-[#1A1A1A]/40 uppercase tracking-widest leading-loose">
-                 All diagnostics are performed using Lecher Antenna resonance and planetary transit alignment.
+                 All diagnostics are performed using Lecher Antenna resonance and directional energy alignment.
                </p>
             </div>
           </div>
