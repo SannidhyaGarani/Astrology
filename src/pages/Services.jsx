@@ -17,6 +17,8 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import Breadcrumbs from '../Components/Breadcrumbs';
+
 const services = [
   {
     title: "Industrial Earth Energetics",
@@ -49,58 +51,59 @@ const services = [
     focus: "Cleansing • Reset • Harmony"
   },
   {
-    title: "Energy Audit & Consultation",
-    desc: "A comprehensive 360° scientific scan of property using proprietary Lecher instrumentation.",
+    title: "Vastu Map Planning",
+    desc: "Scientific architectural layout design based on 16 directions and zonal energy distribution for optimal life-flow.",
     icon: Microscope,
-    focus: "Analysis • Diagnosis • Strategy"
+    focus: "Planning • Precision • Mapping"
   }
 ];
+
+const MicroGridPattern = () => (
+  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#C9A14A_1px,transparent_1px),linear-gradient(to_bottom,#C9A14A_1px,transparent_1px)] bg-[size:5rem_5rem]" />
+);
 
 const ServiceCard = ({ service, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.8 }}
-      whileHover={{ y: -10 }}
-      className="relative group h-full"
+      transition={{ delay: index * 0.05, duration: 0.6 }}
+      className="relative h-full"
     >
-      {/* 3D Tilt Effect Container */}
-      <div className="relative h-full bg-white/40 backdrop-blur-xl border border-[#C9A14A]/10 p-10 rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-[#C9A14A]/40 group-hover:shadow-[0_30px_60px_rgba(201,161,74,0.12)]">
+      {/* High-Contrast Luxury Panel Architecture */}
+      <div className="relative h-full bg-white border border-[#C9A14A]/15 p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 hover:border-[#C9A14A] hover:shadow-[0_20px_40px_rgba(201,161,74,0.05)] group">
         
-        {/* Animated Gradient Shimmer */}
-        <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+        {/* Micro Layout Indicator */}
+        <div className="absolute top-4 right-4 text-[9px] font-mono tracking-widest text-zinc-300 group-hover:text-[#C9A14A] transition-colors">
+          // SYS_MOD_0{index + 1}
+        </div>
 
-        {/* Glowing Corner Borders */}
-        <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-[#C9A14A]/0 group-hover:border-[#C9A14A]/60 transition-all duration-500 rounded-tl-2xl" />
-        <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-[#C9A14A]/0 group-hover:border-[#C9A14A]/60 transition-all duration-500 rounded-br-2xl" />
-
-        {/* Content */}
-        <div className="relative z-10">
-          <div className="w-16 h-16 rounded-full bg-[#1A1A1A] flex items-center justify-center mb-8 shadow-lg group-hover:rotate-[360deg] transition-transform duration-700">
-            <service.icon className="text-[#C9A14A]" size={28} strokeWidth={1.5} />
+        <div>
+          {/* Flat Premium Icon Frame */}
+          <div className="w-14 h-14 bg-[#111111] flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-105">
+            <service.icon className="text-[#C9A14A]" size={24} strokeWidth={1.2} />
           </div>
 
-          <p className="text-[#C9A14A] text-[10px] tracking-[0.3em] font-bold mb-4 uppercase font-['Inter']">
+          <span className="font-['Inter'] text-[10px] tracking-[0.35em] text-[#C9A14A] font-bold uppercase block mb-3">
             {service.focus}
-          </p>
+          </span>
 
-          <h3 className="text-2xl font-['Cinzel'] font-bold text-[#1A1A1A] mb-4 leading-snug">
+          <h3 className="text-2xl sm:text-3xl font-['Cormorant_Garamond'] font-light text-[#111111] mb-4 leading-tight tracking-tight">
             {service.title}
           </h3>
 
-          <p className="text-gray-500 text-sm leading-relaxed font-light mb-8 line-clamp-3">
+          <p className="text-zinc-600 text-base sm:text-lg leading-relaxed font-light mb-8">
             {service.desc}
           </p>
-
-          <Link to="/contact">
-            <button className="flex items-center gap-3 text-[#1A1A1A] text-[11px] font-bold tracking-[0.2em] uppercase group/btn">
-              Explore 
-              <ArrowRight size={14} className="text-[#C9A14A] transition-transform group-hover/btn:translate-x-2" />
-            </button>
-          </Link>
         </div>
+
+        <Link to="/contact" className="inline-block">
+          <button className="inline-flex items-center gap-2.5 text-[#111111] text-xs font-bold tracking-[0.3em] uppercase group/btn">
+            Request Matrix Analysis
+            <ArrowRight size={14} className="text-[#C9A14A] transform transition-transform duration-300 group-hover/btn:translate-x-1.5" />
+          </button>
+        </Link>
       </div>
     </motion.div>
   );
@@ -108,123 +111,93 @@ const ServiceCard = ({ service, index }) => {
 
 const VrihadVastuServices = () => {
   return (
-    <section className="py-32 bg-[#FDFCF9] relative overflow-hidden">
+    <div className="bg-[#FAF8F4] min-h-screen">
+      <Breadcrumbs 
+        title="Scientific Expertise" 
+        subtitle="From heavy industrial architecture matrices to high-end residential parameters, we calibrate built environments to synchronize perfectly with telluric radiation grids."
+        image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070"
+      />
+      <section className="pb-16 bg-transparent relative overflow-hidden">
+      <MicroGridPattern />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_#FAF8F4_85%)] pointer-events-none" />
       
-      {/* Background Ornaments */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle_at_center,_rgba(201,161,74,0.03),transparent_70%)] rounded-full" />
-        {/* Subtle Sacred Geometry Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" 
-             style={{ 
-               backgroundImage: `radial-gradient(#C9A14A 1px, transparent 1px)`,
-               backgroundSize: '60px 60px' 
-             }} 
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-24">
-          <motion.span 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-[#C9A14A] tracking-[0.5em] text-[10px] font-bold mb-4 block uppercase font-['Inter']"
-          >
-            Our Expertise
-          </motion.span>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl lg:text-6xl font-['Cinzel'] font-bold text-[#1A1A1A] mb-8"
-          >
-            Precision-Driven <br />
-            <span className="italic font-light">Energy Solutions</span>
-          </motion.h2>
-
-          <div className="w-20 h-[1px] bg-[#C9A14A] mx-auto mb-8 opacity-40" />
-
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-500 text-lg font-light leading-relaxed"
-          >
-            From industrial plants to personal sanctuaries, we engineer built environments that 
-            re-align with the earth’s natural resonance systems.
-          </motion.p>
-        </div>
-
-        {/* Grid - Desktop & Tablet */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {/* RESPONSIVE STRUCTURE: GRID FOR DESKTOP / TABLET */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, i) => (
             <ServiceCard key={i} service={service} index={i} />
           ))}
         </div>
 
-        {/* Slider - Mobile Only */}
-        <div className="md:hidden mb-20 services-mobile-slider">
+        {/* RESPONSIVE STRUCTURE: MOBILE NATIVE SLIDER */}
+        <div className="md:hidden mb-12 services-mobile-slider">
           <Swiper
             modules={[Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1.1}
-            centeredSlides={true}
-            autoplay={{ delay: 3000 }}
+            spaceBetween={16}
+            slidesPerView={1.05}
+            centeredSlides={false}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
             pagination={{ clickable: true }}
-            className="pb-16"
+            className="pb-12"
           >
             {services.map((service, i) => (
-              <SwiperSlide key={i}>
+              <SwiperSlide key={i} className="h-auto">
                 <ServiceCard service={service} index={i} />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
-        {/* CTA Section */}
+        {/* HIGH-END INSTITUTIONAL CTA CALLOUT */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center bg-[#1A1A1A] py-16 px-8 relative overflow-hidden group rounded-sm"
+          className="bg-[#111111] text-white py-14 px-6 sm:px-12 lg:px-16 relative overflow-hidden shadow-2xl border border-zinc-800"
         >
-          {/* Internal Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(201,161,74,0.1),transparent_70%)] pointer-events-none" />
+          {/* Structural Radiance Vector */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#C9A14A]/5 rounded-full blur-[100px] pointer-events-none" />
           
-          <h4 className="text-white text-2xl font-['Cinzel'] mb-8 relative z-10">
-            Not sure which service you need?
-          </h4>
-          
-          <Link to="/contact">
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(201,161,74,0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-5 bg-gradient-to-r from-[#C9A14A] to-[#E5C77A] text-[#1A1A1A] font-bold font-['Cinzel'] tracking-[0.3em] text-xs uppercase shadow-2xl relative z-10 transition-all duration-300"
-            >
-              Get Expert Guidance
-            </motion.button>
-          </Link>
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 max-w-6xl mx-auto">
+            <div className="max-w-xl">
+              <span className="text-[#C9A14A] font-['Inter'] text-[10px] tracking-[0.4em] font-bold uppercase block mb-2">
+                // System Diagnosis Advisory
+              </span>
+              <h4 className="text-white text-3xl sm:text-4xl font-['Cormorant_Garamond'] font-light tracking-tight">
+                Require Custom Architectural Mapping?
+              </h4>
+              <p className="text-zinc-400 font-light text-sm sm:text-base mt-2">
+                Connect directly with our engineering core to isolate custom telemetry layouts for commercial setups or corporate ground operations.
+              </p>
+            </div>
+            
+            <div className="shrink-0">
+              <Link to="/contact" className="block w-full sm:w-auto">
+                <button className="w-full sm:w-auto px-10 py-4 bg-[#C9A14A] hover:bg-[#b8913f] text-[#111111] font-bold font-['Cinzel'] tracking-[0.25em] text-xs transition-colors duration-300">
+                  Acquire Guidance Matrix
+                </button>
+              </Link>
+            </div>
+          </div>
         </motion.div>
       </div>
 
-      {/* Custom Styles for Swiper Pagination */}
+      {/* Customized Pagination Accents */}
       <style jsx global>{`
         .services-mobile-slider .swiper-pagination-bullet {
           background: #C9A14A !important;
-          opacity: 0.3;
+          opacity: 0.25;
         }
         .services-mobile-slider .swiper-pagination-bullet-active {
           opacity: 1;
-          width: 20px;
-          border-radius: 4px;
+          width: 16px;
+          border-radius: 2px;
+          transition: all 0.3s ease;
         }
       `}</style>
     </section>
+    </div>
   );
 };
 

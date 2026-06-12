@@ -1,263 +1,284 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Radar, BarChart3, Wind, ShieldCheck, Activity, Radio } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Radar, BarChart3, Wind, ShieldCheck, Activity, Radio, ArrowUpRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 
-// Import Swiper styles
+// Import core Swiper structure distributions
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const ProcessSection = () => {
   const steps = [
     {
+      index: "01",
       title: "Scan",
+      subtitle: "Telluric Topology Mapping",
       icon: Radar,
-      desc: "Comprehensive mapping of subterranean water veins and directional alignments.",
-      delay: 0.2
+      desc: "Deep matrix tracking across subterranean water vectors, fault fissures, and global grid intersecting networks to register foundational disruptions.",
     },
     {
+      index: "02",
       title: "Analyze",
+      subtitle: "Resonance Frequency Audit",
       icon: BarChart3,
-      desc: "Quantifying frequency distortions using Lecher resonance protocols.",
-      delay: 0.4
+      desc: "Quantifying localized micro-vibrational anomalies down to specific Hz outputs using calibrated electronic Lecher spectrum sensors.",
     },
     {
+      index: "03",
       title: "Harmonize",
+      subtitle: "Geometric Field Realignment",
       icon: Wind,
-      desc: "Neutralizing stress knots and restoring the property's natural golden ratio.",
-      delay: 0.6
+      desc: "Deploying structural neutralizing resonators to clear geopathic tension loops, restoring the location to pristine Golden Ratio alignment.",
     }
   ];
 
   return (
-    <section className="py-16 sm:py-32 bg-[#FDFCF9] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-12 sm:mb-20">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-['Cinzel'] text-[10px] tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
-          >
-            The Methodology
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.1] font-medium italic"
-          >
-            From Resonance <span className="not-italic font-light text-[#C9A14A]">to Realignment</span>
-          </motion.h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="w-16 h-[1px] bg-[#C9A14A] mx-auto mt-8 origin-center"
-          />
-        </div>
-
-        <div className="relative flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-0">
-          {/* Animated Connecting Line */}
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-[#C9A14A]/20 hidden lg:block -translate-y-12">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: '100%' }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="h-full bg-gradient-to-r from-transparent via-[#C9A14A] to-transparent shadow-[0_0_15px_#C9A14A]"
-            />
+    <section className="py-16 sm:py-20 bg-[#FAF9F5] text-[#111111] relative overflow-hidden">
+      {/* Editorial Engineering Grids */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[linear-gradient(to_right,#C9A14A_1px,transparent_1px),linear-gradient(to_bottom,#C9A14A_1px,transparent_1px)] bg-[size:5rem_5rem]" />
+      
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+        
+        {/* Asymmetric Luxury Header Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-24 lg:mb-32 items-end">
+          <div className="lg:col-span-7">
+            <span className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-4">
+              Systematic Protocol
+            </span>
+            <h2 className="font-['Cormorant_Garamond'] text-5xl sm:text-7xl text-[#111111] font-light leading-[1.05] tracking-tight">
+              The Architecture <br />
+              of <span className="italic text-[#C9A14A] font-normal">Spatial Correctives</span>
+            </h2>
           </div>
-
-          {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: step.delay, duration: 0.8 }}
-              className="relative z-10 flex flex-col items-center text-center max-w-[280px]"
-            >
-              <div className="w-24 h-24 rounded-full bg-white border border-[#C9A14A]/30 flex items-center justify-center mb-8 shadow-xl group hover:border-[#C9A14A] transition-colors duration-500">
-                <div className="absolute inset-2 rounded-full border border-dashed border-[#C9A14A]/20 animate-[spin_10s_linear_infinite]" />
-                <step.icon className="w-8 h-8 text-[#C9A14A]" />
-              </div>
-              <h3 className="font-['Cinzel'] text-lg text-[#1A1A1A] tracking-widest font-bold mb-4">{step.title}</h3>
-              <p className="font-['Inter'] text-sm text-gray-500 leading-relaxed font-light">
-                {step.desc}
-              </p>
-            </motion.div>
-          ))}
+          <div className="lg:col-span-5 border-l border-[#C9A14A]/25 pl-6 lg:pl-10 py-2">
+            <p className="font-['Inter'] text-sm text-gray-500 leading-relaxed font-light max-w-sm">
+              We apply absolute engineering clarity to energetic disturbances, transitioning environmental metrics from chaotic stress configurations into harmonic stability.
+            </p>
+          </div>
         </div>
+
+        {/* Structural Sequence Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-t border-b border-[#C9A14A]/20 divide-y lg:divide-y-0 lg:divide-x divide-[#C9A14A]/20">
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="p-8 sm:p-12 lg:p-14 flex flex-col justify-between group hover:bg-white transition-colors duration-700 min-h-[380px] relative overflow-hidden"
+              >
+                {/* Subtle Geometric Card Grid Overlay */}
+                <div className="absolute inset-0 bg-[radial-gradient(#C9A14A_1px,transparent_1px)] bg-[size:24px_24px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-700 pointer-events-none" />
+
+                <div>
+                  {/* Top Header Row within Card */}
+                  <div className="flex items-center justify-between mb-12">
+                    <div className="w-12 h-12 rounded-full bg-[#111111] flex items-center justify-center group-hover:bg-[#C9A14A] transition-colors duration-500">
+                      <Icon className="w-4 h-4 text-white stroke-[1.5px]" />
+                    </div>
+                    <span className="font-['Cinzel'] text-sm font-bold text-[#C9A14A]/40 tracking-widest block">
+                      {step.index}
+                    </span>
+                  </div>
+
+                  {/* Text Content */}
+                  <span className="font-['Inter'] text-sm uppercase tracking-[0.25em] text-[#C9A14A] font-semibold mb-2 block">
+                    {step.subtitle}
+                  </span>
+                  <h3 className="font-['Cinzel'] text-xl text-[#111111] tracking-widest font-bold mb-4 group-hover:text-[#C9A14A] transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="font-['Inter'] text-sm text-gray-600 leading-relaxed font-light group-hover:text-gray-900 transition-colors duration-500">
+                    {step.desc}
+                  </p>
+                </div>
+
+                {/* Bottom Architectural Anchor */}
+                <div className="mt-10 pt-4 border-t border-transparent group-hover:border-[#C9A14A]/15 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                  <span className="font-['Inter'] text-sm uppercase tracking-widest text-gray-400 font-medium">System Module Ready</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#C9A14A]" />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );
 };
 
 const ToolsSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
+
   const tools = [
     {
       name: "Lecher Antenna",
-      role: "Vibrational Measurement",
-      desc: "High-precision German-engineered instrument used to detect subtle earth frequencies and geopathic stress lines at the 7.83Hz resonance.",
+      role: "Vibrational Metric Capture",
+      desc: "High-precision structural calibration module tuned to capture ultra-fine variations in global Hartmann/Curry lattice configurations and identify active water vein friction patterns.",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070",
       icon: Activity
     },
     {
       name: "Universal Aura Scanner",
-      role: "Bio-Field Visualization",
-      desc: "Digital resonance scanner used to quantify the energetic integrity of residential and industrial land imprints.",
+      role: "Quantum Shield Diagnostics",
+      desc: "Advanced visual diagnostic node calibrated to project electromagnetic boundary fields, mapping structural density gaps across modern residential or industrial assets.",
       image: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?q=80&w=2070",
       icon: ShieldCheck
     },
     {
       name: "Esmog Quantifier",
-      role: "EMF Synchronization",
-      desc: "Advanced sensor array for detecting electromagnetic interference and high-tension grid stress in modern corporate environments.",
+      role: "High-Tension Wave Audit",
+      desc: "Digital signature tracking framework engineered to systematically evaluate high-frequency ambient radiation leaks and high-voltage line interference variables.",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974",
       icon: Radio
     }
   ];
 
   return (
-    <section className="py-16 sm:py-32 bg-[#FBF9F5] text-[#1A1A1A] relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-white text-[#111111] relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#C9A14A_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-      {/* Background Subtle Grid - The "Earth Matrix" */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(#C9A14A 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-
-        {/* Header Section */}
-        <div className="text-center mb-12 sm:mb-24">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-['Cinzel'] text-[10px] tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
-          >
-            Scientific Diagnostic Suite
-          </motion.span>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.1] font-medium italic"
-          >
-            Proprietary <span className="not-italic font-light text-[#C9A14A]">Instrumentation</span>
-          </motion.h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="w-16 h-[1px] bg-[#C9A14A] mx-auto mt-8 origin-center"
-          />
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+        
+        {/* Top Boundary Ribbon Layout */}
+        <div className="border-b border-[#C9A14A]/20 pb-10 mb-16 lg:mb-24 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+          <div>
+            <span className="font-['Cinzel'] text-sm tracking-[0.5em] text-[#C9A14A] font-bold uppercase block mb-3">
+              Scientific Diagnostic Suite
+            </span>
+            <h2 className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl text-[#111111] font-light leading-none tracking-tight">
+              Proprietary <span className="italic text-[#C9A14A] font-normal">Instrumentation</span>
+            </h2>
+          </div>
+          
+          {/* Progress Counters */}
+          <div className="font-['Cinzel'] text-xs tracking-[0.3em] font-bold text-[#111111]/40">
+            <span className="text-[#111111] text-lg">{String(activeIndex + 1).padStart(2, '0')}</span> / {String(tools.length).padStart(2, '0')}
+          </div>
         </div>
 
-        {/* SWIPER COMPONENT */}
-        <div className="tools-swiper-container">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={40}
-            slidesPerView={1.2}
-            centeredSlides={false}   // ❌ remove center mode
-            initialSlide={0}         // ✅ force start from first
-            loop={true}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            navigation={true}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 2.5 }
-            }}
-            className="!overflow-visible"
-          >
-            {tools.map((tool, i) => (
-              <SwiperSlide key={i}>
-                {({ isActive }) => (
-                  <motion.div
-                    animate={{
-                      opacity: isActive ? 1 : 0.4,
-                      scale: isActive ? 1 : 0.9,
-                      y: isActive ? 0 : 20
-                    }}
-                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="relative group pb-12"
-                  >
-                    {/* Minimalist Image Card */}
-                    <div className="relative h-[400px] sm:h-[360px] bg-white border border-[#C9A14A]/10 shadow-[0_15px_45px_rgba(201,161,74,0.08)] overflow-hidden transition-all duration-500 hover:border-[#C9A14A]/40 hover:shadow-[0_25px_60px_rgba(201,161,74,0.15)] group/card">
-                      {/* Image Container with Desaturate to Color Effect */}
-                      <div className="h-full w-full overflow-hidden relative">
-                        <div
-                          className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105 group-hover/card:scale-110 grayscale-[0.8] group-hover/card:grayscale-0"
-                          style={{ backgroundImage: `url(${tool.image})` }}
-                        />
-                        {/* Subtle Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700" />
-                        
-                        {/* Role Badge (Optional, keeps some context but minimalist) */}
-                       
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        {/* Global Verification Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-12 sm:mt-24 pt-12 border-t border-[#C9A14A]/10 flex flex-wrap justify-center gap-x-16 gap-y-6"
-        >
-          {["Precision Verified", "Resonance Certified", "Quantum Standard"].map((tag, idx) => (
-            <div key={idx} className="flex items-center gap-3">
-              <div className="w-1 h-1 rounded-full bg-[#C9A14A]" />
-              <span className="text-[10px] tracking-[0.4em] font-bold text-gray-400 uppercase font-['Inter']">{tag}</span>
+        {/* Core Screen Layout (Dynamic Split Panel) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
+          
+          {/* Left Text Metadata Screen Column */}
+          <div className="lg:col-span-5 flex flex-col justify-between py-2 order-2 lg:order-1">
+            <div className="relative min-h-[260px] flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <span className="font-['Inter'] text-sm tracking-[0.25em] font-bold text-[#C9A14A] uppercase block mb-3">
+                    {tools[activeIndex].role}
+                  </span>
+                  <h3 className="font-['Cormorant_Garamond'] text-3xl sm:text-5xl text-[#111111] font-light mb-6 tracking-tight">
+                    {tools[activeIndex].name}
+                  </h3>
+                  <p className="font-['Inter'] text-sm sm:text-base text-gray-500 leading-relaxed font-light max-w-md">
+                    {tools[activeIndex].desc}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
             </div>
-          ))}
-        </motion.div>
-      </div>
 
-      {/* Inline styles for Swiper Customization */}
-      <style jsx global>{`
-        .tools-swiper-container .swiper-pagination-bullet {
-          background: #C9A14A !important;
-          opacity: 0.2;
-          width: 8px;
-          height: 8px;
-          transition: all 0.3s ease;
-        }
-        .tools-swiper-container .swiper-pagination-bullet-active {
-          opacity: 1;
-          width: 24px;
-          border-radius: 4px;
-        }
-        .tools-swiper-container .swiper-button-next,
-        .tools-swiper-container .swiper-button-prev {
-          color: #C9A14A !important;
-          transform: scale(0.6);
-          background: white;
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-          border: 1px solid rgba(201,161,74,0.1);
-        }
-        .tools-swiper-container .swiper-button-next:after,
-        .tools-swiper-container .swiper-button-prev:after {
-          font-size: 24px;
-          font-weight: bold;
-        }
-      `}</style>
+            {/* Custom Interactive Index Indicators */}
+            <div className="space-y-4 mt-12 border-t border-[#C9A14A]/10 pt-8">
+              {tools.map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => swiperRef.current?.slideToLoop(idx)}
+                  className="flex items-center justify-between w-full text-left group py-1"
+                >
+                  <span className={`font-['Cinzel'] text-xs tracking-widest font-bold transition-all duration-300 ${
+                    activeIndex === idx ? 'text-[#C9A14A] translate-x-2' : 'text-gray-400 group-hover:text-[#111111]'
+                  }`}>
+                    {String(idx + 1).padStart(2, '0')}. {item.name}
+                  </span>
+                  <div className={`h-[1px] flex-1 mx-6 bg-[#C9A14A]/10 origin-left transition-transform duration-500 ${
+                    activeIndex === idx ? 'scale-x-100 bg-[#C9A14A]/40' : 'scale-x-0'
+                  }`} />
+                  <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
+                    activeIndex === idx ? 'bg-[#C9A14A]' : 'bg-transparent border border-gray-300'
+                  }`} />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Swiper Slide Viewport Column */}
+          <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center relative select-none">
+            
+            {/* Cinematic Frame Border Decor */}
+            <div className="absolute -inset-4 border border-[#C9A14A]/10 rounded-sm pointer-events-none hidden sm:block" />
+            
+            <Swiper
+              modules={[Navigation, Autoplay, EffectFade]}
+              effect={'fade'}
+              spaceBetween={0}
+              slidesPerView={1}
+              loop={true}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              className="w-full relative shadow-[0_30px_80px_rgba(201,161,74,0.06)]"
+            >
+              {tools.map((tool, i) => (
+                <SwiperSlide key={i} className="w-full overflow-hidden bg-[#FAF9F5]">
+                  <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden p-3 border border-[#C9A14A]/20 bg-white">
+                    <div className="h-full w-full overflow-hidden relative">
+                      {/* Laser Alignment Scanner Overlay Graphic */}
+                      {activeIndex === i && (
+                        <motion.div
+                          initial={{ top: "0%" }}
+                          animate={{ top: "100%" }}
+                          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                          className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A14A] to-transparent z-10 opacity-70 pointer-events-none shadow-[0_0_12px_#C9A14A]"
+                        />
+                      )}
+                      
+                      <div
+                        className="absolute inset-0 bg-cover bg-center grayscale-[0.3] contrast-[1.02] scale-100 hover:scale-105 transition-transform duration-1000 ease-out"
+                        style={{ backgroundImage: `url(${tool.image})` }}
+                      />
+                      {/* Premium Subtle Shimmer Gradient Tint */}
+                      <div className="absolute inset-0 bg-gradient-to-tr from-[#111111]/10 via-transparent to-white/10 mix-blend-overlay pointer-events-none" />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+        </div>
+
+        {/* Global Structural Verification Footer Block */}
+        <div className="mt-24 sm:mt-32 pt-10 border-t border-[#C9A14A]/15 flex flex-wrap justify-between items-center gap-6">
+          <div className="flex flex-wrap gap-x-12 gap-y-4">
+            {["Precision Verified", "Resonance Certified", "Quantum Standard"].map((tag, idx) => (
+              <div key={idx} className="flex items-center gap-2.5">
+                <div className="w-1.5 h-1.5 bg-[#C9A14A]" />
+                <span className="text-sm tracking-[0.35em] font-bold text-gray-400 uppercase font-['Inter']">{tag}</span>
+              </div>
+            ))}
+          </div>
+          <span className="font-['Inter'] text-sm text-gray-400 uppercase tracking-widest hidden md:inline">
+            EE-LAB CORE PROTOCOL // 2026
+          </span>
+        </div>
+
+      </div>
     </section>
   );
 };
+
 export { ProcessSection, ToolsSection };

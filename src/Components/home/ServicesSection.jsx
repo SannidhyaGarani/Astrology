@@ -1,16 +1,16 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Factory, Building2, Home, Activity, Zap, ShieldCheck } from 'lucide-react';
+import { Factory, Building2, Home, Activity, ShieldCheck, Sparkles } from 'lucide-react';
 
 const ServiceCard = ({ title, description, icon: Icon, delay, features }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["8deg", "-8deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-8deg", "8deg"]);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -31,37 +31,46 @@ const ServiceCard = ({ title, description, icon: Icon, delay, features }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, delay }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="relative group h-full"
+      className="relative group h-full cursor-pointer"
     >
+      {/* Outer Card Shell */}
       <div 
-        style={{ transform: "translateZ(50px)" }}
-        className="h-full p-8 bg-white/40 backdrop-blur-xl border border-[#C9A14A]/20 rounded-none shadow-[0_20px_50px_rgba(201,161,74,0.05)] transition-all duration-500 group-hover:border-[#C9A14A]/50 group-hover:shadow-[0_30px_60px_rgba(201,161,74,0.15)] flex flex-col"
+        style={{ transform: "translateZ(40px)" }}
+        className="h-full p-8 bg-[#141416] border border-[#C9A14A]/15 rounded-none transition-all duration-500 group-hover:border-[#C9A14A]/40 shadow-[0_25px_60px_rgba(0,0,0,0.5)] group-hover:shadow-[0_30px_70px_rgba(201,161,74,0.06)] flex flex-col justify-between"
       >
-        {/* Icon & Glow */}
-        <div className="relative mb-8">
-          <div className="absolute inset-0 bg-[#C9A14A]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <Icon className="relative w-10 h-10 text-[#C9A14A] stroke-[1.25px]" />
+        <div>
+          {/* Icon & Geometric Aura */}
+          <div className="relative mb-8 inline-block">
+            <div className="absolute inset-0 bg-[#C9A14A]/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="w-12 h-12 border border-[#C9A14A]/20 flex items-center justify-center bg-[#0D0D0E] group-hover:border-[#C9A14A]/50 transition-colors duration-500">
+              <Icon className="w-5 h-5 text-[#C9A14A] stroke-[1.25px]" />
+            </div>
+          </div>
+
+          {/* Heading and Body */}
+          <h3 className="font-['Cinzel'] text-xl text-[#FAF9F5] font-bold tracking-wider mb-4 group-hover:text-[#C9A14A] transition-colors duration-300">
+            {title}
+          </h3>
+          <p className="font-['Inter'] text-sm text-gray-400 leading-relaxed mb-8 font-light">
+            {description}
+          </p>
         </div>
 
-        {/* Content */}
-        <h3 className="font-['Playfair_Display'] text-2xl text-[#1A1A1A] font-bold mb-4">{title}</h3>
-        <p className="font-['Inter'] text-sm text-gray-500 leading-relaxed mb-8 flex-grow">
-          {description}
-        </p>
-
         {/* Technical Sub-features */}
-        <div className="space-y-3 pt-6 border-t border-[#C9A14A]/10">
+        <div className="space-y-3.5 pt-6 border-t border-[#C9A14A]/10">
           {features.map((f, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <div className="w-1 h-1 bg-[#C9A14A] rounded-full" />
-              <span className="font-['Inter'] text-[10px] uppercase tracking-widest text-[#1A1A1A]/70 font-semibold">{f}</span>
+            <div key={i} className="flex items-center gap-3">
+              <div className="w-1 h-1 bg-[#C9A14A] opacity-60" />
+              <span className="font-['Inter'] text-sm uppercase tracking-[0.2em] text-gray-300 font-medium">
+                {f}
+              </span>
             </div>
           ))}
         </div>
@@ -74,81 +83,102 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Industrial Earth Energetics",
-      description: "High-stakes diagnostic auditing for heavy manufacturing. We neutralize Geopathic Stress to prevent machinery fatigue and optimize labor safety.",
+      description: "High-stakes diagnostic auditing for heavy manufacturing plants. We isolate and neutralize Geopathic Stress corridors to mitigate machinery fatigue and safeguard labor workflows.",
       icon: Factory,
-      features: ["Machinery Longevity", "Geopathic Reversal", "Safety Optimization"]
+      features: ["Machinery Longevity Matrices", "Geopathic Reversal Protocols", "Safety Optimization Metrics"]
     },
     {
-      title: "Commercial Vastu",
-      description: "Strategic energy mapping for corporate headquarters. Aligning the CEO's power position and North-sector blockages to ensure consistent financial liquidity.",
+      title: "Commercial Vastu Solutions",
+      description: "Strategic energy mechanics tailored for corporate headquarters. Adjusting leadership layouts and core directional nodes to unlock capital liquidity and cultural equilibrium.",
       icon: Building2,
-      features: ["Financial Flow", "Leadership Dynamics", "Corporate Wellness"]
+      features: ["Financial Flow Safeguards", "Executive Command Realignment", "Enterprise System Longevity"]
     },
     {
-      title: "Residential Energy Healing",
-      description: "Transforming homes into bio-energetic sanctuaries. Focused on sleep hygiene, fertility optimization, and Brahmasthan correction without demolition.",
+      title: "Residential Spatial Healing",
+      description: "Re-engineering private real estate into high-vibrational sanctuaries. Specialized environmental adjustments targeting sleep architecture and structural memory without structural changes.",
       icon: Home,
-      features: ["Sleep Hygiene", "Elemental Balancing", "Land Memory Clearing"]
+      features: ["Sleep Hygiene Enhancements", "Elemental Node Balancing", "Structural Micro-Modifications"]
     }
   ];
 
   return (
-    <section className="py-16 sm:py-32 bg-[#FBF9F5] relative overflow-hidden">
-      {/* Background Decorative Accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#C9A14A]/[0.02] pointer-events-none" />
+    <section id="services" className="py-16 sm:py-20 bg-[#0D0D0E] relative overflow-hidden text-[#FAF9F5]">
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      {/* 🌌 DISCRETE EDITORIAL GRIDLINES BACKGROUND */}
+      <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[linear-gradient(to_right,#C9A14A_1px,transparent_1px),linear-gradient(to_bottom,#C9A14A_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="absolute top-0 right-0 w-[50%] h-[60%] bg-gradient-to-bl from-[#C9A14A]/5 via-transparent to-transparent blur-[120px] pointer-events-none" />
+
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
-        <div className="text-center mb-12 sm:mb-20">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-['Cinzel'] text-[10px] tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
-          >
-            Specialized Interventions
-          </motion.span>
+        {/* Header Block */}
+        <div className="text-center mb-16 sm:mb-28">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#C9A14A]/70" />
+            <motion.span
+              initial={{ opacity: 0, y: 5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-['Cinzel'] text-sm tracking-[0.5em] text-[#C9A14A] font-bold uppercase block"
+            >
+              Specialized Interventions
+            </motion.span>
+          </div>
+          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.1] font-medium italic"
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-['Cormorant_Garamond'] text-4xl sm:text-5xl lg:text-6xl text-[#FAF9F5] leading-[1.15] font-light max-w-4xl mx-auto"
           >
-            Engineering Harmony <br />
-            <span className="not-italic font-light text-[#C9A14A]">Across Every Built Environment</span>
+            Engineering Architectural Harmony <br />
+            <span className="italic text-[#C9A14A] font-normal font-serif">Across Corporate Ecosystems</span>
           </motion.h2>
+          
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="w-16 h-[1px] bg-[#C9A14A] mx-auto mt-8 origin-center"
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="w-20 h-[1px] bg-[#C9A14A]/40 mx-auto mt-8"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Cards Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10 items-stretch">
           {services.map((service, index) => (
             <ServiceCard 
               key={index} 
               {...service} 
-              delay={index * 0.2}
+              delay={index * 0.15}
             />
           ))}
         </div>
         
-        {/* Secondary Trust Indicator */}
+        {/* Institutional Trust Footprint */}
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-20 pt-10 border-t border-[#C9A14A]/10 flex flex-wrap justify-between items-center gap-6"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="mt-24 pt-10 border-t border-[#C9A14A]/10 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left"
         >
-          <div className="flex items-center gap-4">
-            <Activity className="text-[#C9A14A] w-5 h-5" />
-            <span className="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-gray-400">Diagnostic precision with Lecher Antenna Technology</span>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="w-8 h-8 rounded-full border border-[#C9A14A]/20 flex items-center justify-center bg-[#141416]">
+              <Activity className="text-[#C9A14A] w-3.5 h-3.5" />
+            </div>
+            <span className="font-['Inter'] text-sm uppercase tracking-[0.2em] text-gray-400 max-w-md leading-relaxed font-light">
+              Diagnostic precision driven by calibrated **Lecher Antenna** metrics.
+            </span>
           </div>
-          <div className="flex items-center gap-4">
-            <ShieldCheck className="text-[#C9A14A] w-5 h-5" />
-            <span className="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-gray-400">Trusted by SEBI Registered & Industrial Titans</span>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="w-8 h-8 rounded-full border border-[#C9A14A]/20 flex items-center justify-center bg-[#141416]">
+              <ShieldCheck className="text-[#C9A14A] w-3.5 h-3.5" />
+            </div>
+            <span className="font-['Inter'] text-sm uppercase tracking-[0.2em] text-gray-400 max-w-md leading-relaxed font-light">
+              Retained assets verified by multi-tier **Industrial Titans**.
+            </span>
           </div>
         </motion.div>
 

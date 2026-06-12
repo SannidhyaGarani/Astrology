@@ -5,9 +5,7 @@ import {
   Instagram, 
   Twitter, 
   Linkedin, 
-  Mail, 
   MapPin, 
-  Phone, 
   ArrowUpRight
 } from 'lucide-react';
 
@@ -30,44 +28,57 @@ const PremiumFooter = () => {
   };
 
   return (
-    <footer className="relative bg-[#0A0A0A] pt-32 pb-12 overflow-hidden">
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C9A14A]/30 to-transparent" />
+    <footer className="relative bg-[#080808] pt-24 pb-10 overflow-hidden selection:bg-[#C9A14A]/20">
       
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
+      {/* Top Architectural Alignment Border */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C9A14A]/25 to-transparent" />
+      
+      {/* Structural Tech Grid Lines Accent */}
+      <div className="absolute top-0 right-12 w-[1px] h-full bg-zinc-900/40 hidden lg:block" />
+      <div className="absolute top-0 left-12 w-[1px] h-full bg-zinc-900/40 hidden lg:block" />
+
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-12 mb-20">
           
-          {/* Brand Identity */}
+          {/* BRAND IDENTITY BLOCK */}
           <div className="lg:col-span-5 flex flex-col gap-8">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-block transition-transform duration-500 hover:scale-[1.02] origin-left">
               <img 
                 src="img/1-1.webp" 
                 alt="VrihadVastu Logo" 
-                className="h-16 w-auto brightness-110"
+                className="h-16 w-auto brightness-125 saturate-[0.9]"
               />
             </Link>
-            <p className="font-['Inter'] text-gray-500 text-sm leading-loose tracking-wide max-w-sm">
-              We blend ancient geometry with modern physics to create harmony in your architecture. Experience the science of energetic balance.
+            
+            <p className="font-['Inter'] text-zinc-400 text-sm sm:text-base leading-relaxed tracking-wide max-w-sm font-light">
+              We fuse ancient structural geometry with definitive space physics to synchronize architectural layouts. Restoring natural energetic fields in enterprise infrastructures.
             </p>
-            <div className="flex gap-5">
-              {[Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="group">
-                  <div className="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:border-[#C9A14A]/50 group-hover:bg-[#C9A14A]/5">
-                    <Icon className="w-4 h-4 text-gray-500 group-hover:text-[#C9A14A] transition-colors" />
+            
+            {/* Minimal Square Nodes for Social footprint */}
+            <div className="flex gap-3 pt-2">
+              {[
+                { Icon: Instagram, link: "#" },
+                { Icon: Twitter, link: "#" },
+                { Icon: Linkedin, link: "#" }
+              ].map((item, i) => (
+                <a key={i} href={item.link} className="group">
+                  <div className="w-12 h-12 border border-zinc-800 bg-zinc-900/40 flex items-center justify-center transition-all duration-300 group-hover:border-[#C9A14A]/40 group-hover:bg-[#111111]">
+                    <item.Icon className="w-4 h-4 text-zinc-400 group-hover:text-[#C9A14A] transition-colors" strokeWidth={1.5} />
                   </div>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Links Sections */}
-          <div className="lg:col-span-2">
-            <h4 className="text-[#C9A14A] text-[10px] tracking-[0.3em] uppercase font-bold mb-10">Directory</h4>
+          {/* DIRECTORY NAVIGATION */}
+          <div className="lg:col-span-2 lg:pl-4">
+            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">// Matrix Index</span>
+            <h4 className="text-[#C9A14A] text-sm tracking-[0.25em] uppercase font-bold mb-6 font-['Inter']">Directory</h4>
             <ul className="space-y-5">
               {footerLinks.navigation.map((link, i) => (
                 <li key={i}>
-                  <Link to={link.path} className="text-gray-400 text-xs hover:text-white transition-all tracking-widest uppercase flex items-center gap-2 group">
-                    <span className="w-0 h-[1px] bg-[#C9A14A] transition-all group-hover:w-3"></span>
+                  <Link to={link.path} className="text-zinc-300 text-sm hover:text-white transition-colors duration-300 tracking-[0.18em] uppercase flex items-center gap-2 group">
+                    <span className="w-2 h-[1px] bg-zinc-700 transition-all duration-300 group-hover:w-4 group-hover:bg-[#C9A14A]"></span>
                     {link.name}
                   </Link>
                 </li>
@@ -75,13 +86,15 @@ const PremiumFooter = () => {
             </ul>
           </div>
 
+          {/* SOLUTIONS INDEX */}
           <div className="lg:col-span-2">
-            <h4 className="text-[#C9A14A] text-[10px] tracking-[0.3em] uppercase font-bold mb-10">Solutions</h4>
+            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">// CORE_FUNCTIONS</span>
+            <h4 className="text-[#C9A14A] text-sm tracking-[0.25em] uppercase font-bold mb-6 font-['Inter']">Solutions</h4>
             <ul className="space-y-5">
               {footerLinks.expertise.map((link, i) => (
                 <li key={i}>
-                  <Link to={link.path} className="text-gray-400 text-xs hover:text-white transition-all tracking-widest uppercase flex items-center gap-2 group">
-                    <span className="w-0 h-[1px] bg-[#C9A14A] transition-all group-hover:w-3"></span>
+                  <Link to={link.path} className="text-zinc-300 text-sm hover:text-white transition-colors duration-300 tracking-[0.15em] uppercase flex items-center gap-2 group">
+                    <span className="w-2 h-[1px] bg-zinc-700 transition-all duration-300 group-hover:w-4 group-hover:bg-[#C9A14A]"></span>
                     {link.name}
                   </Link>
                 </li>
@@ -89,33 +102,62 @@ const PremiumFooter = () => {
             </ul>
           </div>
 
-          {/* Contact Teaser */}
-          <div className="lg:col-span-3">
-            <h4 className="text-[#C9A14A] text-[10px] tracking-[0.3em] uppercase font-bold mb-10">Global Presence</h4>
+          {/* GLOBAL FIELD COORDINATES */}
+          <div className="lg:col-span-3 lg:pl-4">
+            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">// LOC_REGISTRY</span>
+            <h4 className="text-[#C9A14A] text-sm tracking-[0.25em] uppercase font-bold mb-6 font-['Inter']">Global Presence</h4>
             <div className="space-y-6">
-              <div className="flex items-start gap-4 group cursor-default">
-                <MapPin className="w-4 h-4 text-[#C9A14A] mt-1" />
-                <p className="text-gray-400 text-[11px] leading-relaxed tracking-widest uppercase">
-                  Studio Centers in<br/>Indore • Katni • Dubai
-                </p>
+              {/* Locations */}
+              <div className="flex items-start gap-4 cursor-default group">
+                <MapPin className="w-5 h-5 text-[#C9A14A] shrink-0 mt-0.5" strokeWidth={1.5} />
+                <div>
+                  <p className="text-zinc-300 text-sm leading-relaxed tracking-[0.15em] uppercase font-bold">
+                    Studio Infrastructure:
+                  </p>
+                  <p className="text-zinc-400 text-sm font-mono mt-1 tracking-wider uppercase">
+                    Noida • Indore • Katni
+                  </p>
+                </div>
               </div>
-              <Link to="/contact" className="inline-flex items-center gap-2 text-white text-[10px] tracking-[0.2em] uppercase border-b border-[#C9A14A] pb-2 hover:gap-4 transition-all">
-                Request Consultation <ArrowUpRight className="w-3 h-3" />
-              </Link>
+
+              {/* Direct Comms */}
+              <div className="space-y-4 pt-2 border-t border-zinc-900">
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] text-zinc-500 tracking-[0.2em] uppercase font-bold">Direct Line:</span>
+                  <a href="tel:+919312437037" className="text-zinc-300 text-sm font-mono hover:text-[#C9A14A] transition-colors">+91 9312437037</a>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] text-zinc-500 tracking-[0.2em] uppercase font-bold">Inquiry Registry:</span>
+                  <a href="mailto:info@vrihadvastu.com" className="text-zinc-300 text-sm font-mono hover:text-[#C9A14A] transition-colors">info@vrihadvastu.com</a>
+                </div>
+              </div>
+              
+              <div className="pt-4">
+                <Link to="/contact" className="inline-flex items-center gap-4 text-white text-sm font-bold tracking-[0.25em] uppercase border-b border-[#C9A14A]/40 pb-2 hover:border-[#C9A14A] hover:gap-6 transition-all duration-300 group">
+                  Initialize Consultation 
+                  <ArrowUpRight className="w-4 h-4 text-[#C9A14A] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
+                </Link>
+              </div>
             </div>
           </div>
+
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between gap-6">
-          <p className="text-[9px] text-gray-600 tracking-[0.4em] uppercase">
-            © {currentYear} VrihadVastu Portfolio. Site by Design Studio.
+        {/* BOTTOM METRIC BAR */}
+        <div className="pt-10 mt-4 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-zinc-500 tracking-[0.3em] uppercase font-mono text-center sm:text-left">
+            © {currentYear} VRIHADVASTU CORE. DEVELOPED BY DESIGN STUDIO UNIT.
           </p>
           <div className="flex gap-10">
-            <a href="#" className="text-[9px] text-gray-600 hover:text-[#C9A14A] transition-colors tracking-[0.3em] uppercase">Privacy</a>
-            <a href="#" className="text-[9px] text-gray-600 hover:text-[#C9A14A] transition-colors tracking-[0.3em] uppercase">Terms</a>
+            <a href="#" className="text-sm text-zinc-500 hover:text-[#C9A14A] transition-colors duration-300 tracking-[0.25em] font-mono uppercase">
+              Privacy_Protocol
+            </a>
+            <a href="#" className="text-sm text-zinc-500 hover:text-[#C9A14A] transition-colors duration-300 tracking-[0.25em] font-mono uppercase">
+              Terms_Of_Usage
+            </a>
           </div>
         </div>
+        
       </div>
     </footer>
   );

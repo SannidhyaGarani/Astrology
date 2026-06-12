@@ -9,15 +9,33 @@ import { ProcessSection, ToolsSection } from '../Components/home/Process';
 
 const Home = () => {
   return (
-    <main className="bg-[#f7f7f5] text-[#111827]">
+    <main className="bg-[#FAF9F5] text-[#111827]">
       <HeroSection />
-      <About />
+      
+      <div className="border-t border-[#C9A14A]/10">
+        <About />
+      </div>
+      
       <ServicesSection />
-      <EarthEnergeticsLab/>
-      <ToolsSection/>
-      <ProcessSection/>
+      
+      <div className="border-t border-[#C9A14A]/10">
+        <EarthEnergeticsLab/>
+      </div>
+      
+      <div className="border-t border-[#C9A14A]/10">
+        <ToolsSection/>
+      </div>
+      
+      <div className="border-t border-[#C9A14A]/10">
+        <ProcessSection/>
+      </div>
+      
       <BenefitsSection/>
-      <TestimonialSection/>
+      
+      <div className="border-t border-[#C9A14A]/10">
+        <TestimonialSection/>
+      </div>
+      
       <CTA /> 
     </main>
   );

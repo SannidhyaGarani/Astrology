@@ -5,7 +5,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 
 const FinalCTA = () => {
   return (
-    <section className="relative py-24 sm:py-40 bg-[#FDFCF9] overflow-hidden">
+    <section className="relative py-16 sm:py-24 bg-[#FDFCF9] overflow-hidden">
       
       {/* 🌊 SUBTLE ENERGY WAVES (Animated background) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -42,7 +42,7 @@ const FinalCTA = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-['Cinzel'] text-[10px] tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
+            className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
           >
             Begin Your Alignment
           </motion.span>
@@ -77,7 +77,7 @@ const FinalCTA = () => {
               <motion.button 
                 whileHover={{ scale: 1.05, backgroundColor: '#C9A14A', color: '#FFF' }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 bg-[#1A1A1A] text-white font-['Cinzel'] text-xs tracking-[0.3em] font-bold shadow-2xl transition-all duration-500 flex items-center gap-4 group"
+                className="px-10 py-5 bg-[#1A1A1A] text-white font-['Cinzel'] text-sm tracking-[0.3em] font-bold shadow-2xl transition-all duration-500 flex items-center gap-4 group"
               >
                 Book Consultation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
@@ -88,7 +88,7 @@ const FinalCTA = () => {
               <motion.button 
                 whileHover={{ scale: 1.05, borderColor: '#1A1A1A', color: '#1A1A1A' }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 border border-[#C9A14A] text-[#C9A14A] font-['Cinzel'] text-xs tracking-[0.3em] font-bold transition-all duration-500"
+                className="px-10 py-5 border border-[#C9A14A] text-[#C9A14A] font-['Cinzel'] text-sm tracking-[0.3em] font-bold transition-all duration-500"
               >
                 Contact Expert
               </motion.button>

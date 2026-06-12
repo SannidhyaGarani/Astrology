@@ -1,101 +1,210 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const PremiumNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
-  // This checks if you have scrolled down the page
+  // Scroll Detection
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock Body Scroll when Mobile Menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
+  // Close Mobile Menu on Route Change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Home', path: '/', id: '01' },
+    { name: 'About Matrix', path: '/about', id: '02' },
+    { name: 'Core Services', path: '/services', id: '03' },
+    { name: 'Contact Protocol', path: '/contact', id: '04' }
   ];
 
+  // Animation variants for mobile menu items
+  const menuVars = {
+    initial: { scaleY: 0 },
+    animate: { 
+      scaleY: 1, 
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } 
+    },
+    exit: { 
+      scaleY: 0, 
+      transition: { delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] } 
+    }
+  };
+
+  const linkVars = {
+    initial: { y: 30, opacity: 0 },
+    open: { y: 0, opacity: 1, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
+  };
+
+  const containerVars = {
+    initial: { transition: { staggerChildren: 0.09, staggerDirection: -1 } },
+    open: { transition: { delayChildren: 0.2, staggerChildren: 0.09, staggerDirection: 1 } }
+  };
+
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${
-        isScrolled 
-          ? 'bg-white/90 backdrop-blur-md py-3 shadow-sm' 
-          : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
-        
-        {/* Logo Section - Now uses your image */}
-        <Link to="/" className="relative z-10">
-          <img 
-            src="img/1-1.webp" 
-            alt="Logo" 
-            className="h-12 w-auto object-contain hover:scale-105 transition-transform"
-          />
-        </Link>
-
-        {/* Desktop Links - Hidden on small screens */}
-        <div className="hidden md:flex items-center gap-12">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-800 hover:text-[#C9A14A] transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
-          <Link to="/contact">
-            <button className="px-7 py-2.5 border border-[#C9A14A] text-[#C9A14A] text-[10px] tracking-[0.2em] uppercase hover:bg-[#C9A14A] hover:text-white transition-all duration-500">
-              Inquire
-            </button>
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 border-b ${
+          isScrolled || isOpen
+            ? 'bg-white/95 backdrop-blur-xl py-4 border-[#C9A14A]/15 shadow-[0_10px_30px_rgba(0,0,0,0.03)]'
+            : 'bg-transparent py-6 border-transparent'
+        }`}
+      >
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 flex justify-between items-center">
+          
+          {/* LOGO MATRIX */}
+          <Link to="/" className="relative z-[110] flex items-center gap-4 group">
+            <img 
+              src="img/1-1.webp" 
+              alt="Vrihad Vastu" 
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Subtle Operational Indicator - Hidden on Mobile */}
+            <div className="hidden sm:flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <span className="w-1.5 h-1.5 bg-[#C9A14A] rounded-full animate-pulse" />
+              <span className="text-[8px] font-['Inter'] tracking-[0.3em] text-zinc-400 font-bold uppercase">
+                Active
+              </span>
+            </div>
           </Link>
-        </div>
 
-        {/* Mobile Toggle Button */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden relative z-10 p-2"
-        >
-          <div className="space-y-1.5">
-            <span className={`block w-6 h-0.5 bg-black transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-[#C9A14A] ${isOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-4 h-0.5 bg-black ml-auto transition-all ${isOpen ? '-rotate-45 -translate-y-2 w-6' : ''}`}></span>
+          {/* DESKTOP ARCHITECTURE */}
+          <div className="hidden lg:flex items-center gap-10 z-[110]">
+            <div className="flex items-center gap-8">
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="relative group py-2"
+                  >
+                    <span className={`text-[10px] font-['Inter'] font-bold tracking-[0.25em] uppercase transition-colors duration-300 ${
+                      isActive ? 'text-[#C9A14A]' : 'text-[#111111] group-hover:text-[#C9A14A]'
+                    }`}>
+                      {item.name}
+                    </span>
+                    {/* Active/Hover Indicator Line */}
+                    <span className={`absolute bottom-0 left-0 h-[1px] bg-[#C9A14A] transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} />
+                  </Link>
+                );
+              })}
+            </div>
+            
+            <div className="w-[1px] h-4 bg-[#C9A14A]/30" />
+
+            <Link to="/contact">
+              <button className="px-8 py-3 bg-[#111111] text-white text-[10px] font-bold font-['Cinzel'] tracking-[0.3em] uppercase hover:bg-[#C9A14A] hover:text-[#111111] transition-colors duration-500 shadow-sm">
+                Book Audit
+              </button>
+            </Link>
           </div>
-        </button>
 
-        {/* Mobile Full-Screen Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-0 bg-white flex flex-col items-center justify-center gap-8 md:hidden"
-            >
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-['Playfair_Display'] text-gray-900"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.nav>
+          {/* MOBILE TOGGLE MATRIX */}
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden relative z-[110] w-10 h-10 flex items-center justify-center focus:outline-none"
+          >
+            <div className="flex flex-col items-end gap-1.5 w-6">
+              <span className={`block h-[1.5px] bg-[#111111] transition-all duration-500 ease-in-out ${isOpen ? 'w-6 rotate-45 translate-y-[7.5px]' : 'w-6'}`} />
+              <span className={`block h-[1.5px] bg-[#C9A14A] transition-all duration-500 ease-in-out ${isOpen ? 'opacity-0 translate-x-2' : 'w-4'}`} />
+              <span className={`block h-[1.5px] bg-[#111111] transition-all duration-500 ease-in-out ${isOpen ? 'w-6 -rotate-45 -translate-y-[7.5px]' : 'w-5'}`} />
+            </div>
+          </button>
+
+        </div>
+      </motion.nav>
+
+      {/* EDITORIAL MOBILE MENU OVERLAY */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            variants={menuVars}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="fixed inset-0 z-[90] bg-[#FCFAF6] origin-top"
+          >
+            {/* Background Micro-Grid */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#C9A14A_1px,transparent_1px),linear-gradient(to_bottom,#C9A14A_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+            
+            <div className="flex flex-col h-full justify-center px-6 sm:px-12 relative z-10 pt-20">
+              <motion.div 
+                variants={containerVars}
+                initial="initial"
+                animate="open"
+                exit="initial"
+                className="flex flex-col gap-6 sm:gap-8"
+              >
+                <div className="mb-4">
+                  <span className="text-[#C9A14A] text-[9px] tracking-[0.4em] font-bold uppercase font-['Inter'] block">
+                    // Navigation Index
+                  </span>
+                  <div className="w-12 h-[1px] bg-[#C9A14A]/30 mt-4" />
+                </div>
+
+                {navItems.map((item) => (
+                  <div key={item.name} className="overflow-hidden">
+                    <motion.div variants={linkVars}>
+                      <Link
+                        to={item.path}
+                        className="flex items-baseline gap-4 group"
+                      >
+                        <span className="font-['Cinzel'] text-xs text-[#C9A14A] font-bold tracking-widest opacity-60">
+                          {item.id}
+                        </span>
+                        <span className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl text-[#111111] font-light tracking-tight group-hover:italic transition-all duration-300">
+                          {item.name}
+                        </span>
+                      </Link>
+                    </motion.div>
+                  </div>
+                ))}
+
+                <motion.div variants={linkVars} className="mt-12 overflow-hidden">
+                  <Link to="/contact" className="block">
+                    <button className="w-full py-5 bg-[#111111] text-white text-[10px] font-bold font-['Cinzel'] tracking-[0.3em] uppercase active:bg-[#C9A14A] transition-colors duration-300">
+                      Initialize Consultation
+                    </button>
+                  </Link>
+                </motion.div>
+                
+                {/* Mobile Footer Metadata */}
+                <motion.div variants={linkVars} className="absolute bottom-10 left-6 sm:left-12 flex items-center gap-3">
+                  <span className="w-2 h-2 bg-[#C9A14A]" />
+                  <span className="text-[9px] tracking-[0.3em] font-['Inter'] text-zinc-400 font-bold uppercase">
+                    Global Protocol Online
+                  </span>
+                </motion.div>
+
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

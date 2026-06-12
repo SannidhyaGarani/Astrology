@@ -63,20 +63,25 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-16 bg-[#FDFCF9] relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-[#0D0D0E] relative overflow-hidden text-[#FAF9F5]">
+      {/* 🌌 DISCRETE EDITORIAL GRIDLINES BACKGROUND */}
+      <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[linear-gradient(to_right,#C9A14A_1px,transparent_1px),linear-gradient(to_bottom,#C9A14A_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-12 sm:mb-20">
+        <div className="text-center mb-16 sm:mb-24">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-['Cinzel'] text-[10px] tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
-          >The Quantified Impact</motion.span>
+            className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
+          >
+            The Quantified Impact
+          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.1] font-medium italic"
+            className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl text-[#FAF9F5] leading-[1.1] font-medium italic"
           >
             Numerical <span className="not-italic font-light text-[#C9A14A]">Proof of Alignment</span>
           </motion.h2>
@@ -84,27 +89,29 @@ const BenefitsSection = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="w-16 h-[1px] bg-[#C9A14A] mx-auto mt-8 origin-center"
+            className="w-16 h-[1px] bg-[#C9A14A]/40 mx-auto mt-8 origin-center"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((b, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="flex flex-col items-center text-center p-8 bg-white border border-[#C9A14A]/10 shadow-[0_10px_30px_rgba(201,161,74,0.03)]"
+              className="flex flex-col items-center text-center p-10 bg-[#161618] border border-[#C9A14A]/10 hover:border-[#C9A14A]/30 transition-all duration-500 shadow-2xl"
             >
-              <div className="w-14 h-14 rounded-full bg-[#C9A14A]/5 flex items-center justify-center mb-6">
+              <div className="w-14 h-14 rounded-full bg-[#C9A14A]/10 flex items-center justify-center mb-8 border border-[#C9A14A]/20">
                 <b.icon className="w-6 h-6 text-[#C9A14A]" />
               </div>
-              <h3 className="text-4xl font-['Cormorant_Garamond'] font-bold text-[#1A1A1A] mb-2">
+              <h3 className="text-5xl font-['Cormorant_Garamond'] font-bold text-[#FAF9F5] mb-3">
                 <StatCounter value={b.val} suffix={b.suffix} />
               </h3>
-              <p className="font-['Cinzel'] text-[10px] tracking-[0.2em] text-[#C9A14A] font-bold uppercase mb-4">{b.title}</p>
-              <p className="font-['Inter'] text-xs text-gray-500 leading-relaxed font-light">{b.desc}</p>
+              <p className="font-['Cinzel'] text-sm tracking-[0.2em] text-[#C9A14A] font-bold uppercase mb-4">{b.title}</p>
+              <p className="font-['Inter'] text-sm text-gray-400 leading-relaxed font-light px-2">{b.desc}</p>
+              
+              <div className="mt-8 w-8 h-[1px] bg-[#C9A14A]/20 group-hover:w-16 transition-all duration-700" />
             </motion.div>
           ))}
         </div>
@@ -158,7 +165,7 @@ const TestimonialSection = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-['Cinzel'] text-[10px] tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
+          className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
         >Voices of the Aligned</motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -206,7 +213,7 @@ const TestimonialSection = () => {
                 <h4 className="font-['Cinzel'] text-sm tracking-[0.2em] text-[#1A1A1A] font-bold mb-1">
                   {testimonials[index].author}
                 </h4>
-                <p className="font-['Inter'] text-[10px] uppercase tracking-widest text-[#C9A14A] font-medium">
+                <p className="font-['Inter'] text-sm uppercase tracking-widest text-[#C9A14A] font-medium">
                   {testimonials[index].role}
                 </p>
               </div>
