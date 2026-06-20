@@ -1,204 +1,168 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Factory, 
-  Briefcase, 
-  Home, 
-  Radar, 
-  RefreshCw, 
-  Microscope, 
-  ArrowRight 
-} from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-
+import { ArrowRight, MoveRight } from 'lucide-react';
 import Breadcrumbs from '../Components/Breadcrumbs';
 
 const services = [
   {
-    title: "Industrial Earth Energetics",
-    desc: "Optimizing machinery longevity and structural safety through tectonic stress neutralization.",
-    icon: Factory,
-    focus: "Productivity • Safety • Longevity"
+    title: "Home Design",
+    desc: "Create a balanced and harmonious living environment that supports health, prosperity, relationships, and overall well-being through scientifically planned spaces.",
+    image: "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a50?q=80&w=2070",
+    focus: "Health • Harmony • Prosperity",
+    slug: "home-design"
   },
   {
-    title: "Commercial & Corporate Vastu",
-    desc: "Aligning executive workspaces to enhance decision clarity and sustainable financial flow.",
-    icon: Briefcase,
-    focus: "Leadership • Growth • Clarity"
+    title: "Office Design",
+    desc: "Design workspaces that encourage focus, productivity, leadership, teamwork, decision-making, and long-term business growth.",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069",
+    focus: "Focus • Growth • Success",
+    slug: "office-design"
   },
   {
-    title: "Residential Energy Healing",
-    desc: "Transforming living spaces into high-vibrational sanctuaries for health and family harmony.",
-    icon: Home,
-    focus: "Wellness • Peace • Vitality"
+    title: "Factory Design",
+    desc: "Optimize industrial facilities to improve workflow, production efficiency, operational safety, equipment performance, and workforce productivity.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070",
+    focus: "Production • Safety • Efficiency",
+    slug: "factory-design"
   },
   {
-    title: "Geopathic Stress Detection",
-    desc: "Scientific mapping of harmful earth radiations, fault lines, and underground water veins.",
-    icon: Radar,
-    focus: "Detection • Shielding • Health"
-  },
-  {
-    title: "Land Healing & Balancing",
-    desc: "Clearing historical land memory and etheric imprints to prepare sites for new construction.",
-    icon: RefreshCw,
-    focus: "Cleansing • Reset • Harmony"
-  },
-  {
-    title: "Vastu Map Planning",
-    desc: "Scientific architectural layout design based on 16 directions and zonal energy distribution for optimal life-flow.",
-    icon: Microscope,
-    focus: "Planning • Precision • Mapping"
+    title: "Developer Projects",
+    desc: "Planning solutions for residential and commercial developments that enhance buyer attraction, project value, sales performance, and brand reputation.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070",
+    focus: "Projects • Sales • Branding",
+    slug: "developer-projects"
   }
 ];
 
-const MicroGridPattern = () => (
-  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#C9A14A_1px,transparent_1px),linear-gradient(to_bottom,#C9A14A_1px,transparent_1px)] bg-[size:5rem_5rem]" />
-);
-
-const ServiceCard = ({ service, index }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05, duration: 0.6 }}
-      className="relative h-full"
-    >
-      {/* High-Contrast Luxury Panel Architecture */}
-      <div className="relative h-full bg-white border border-[#C9A14A]/15 p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 hover:border-[#C9A14A] hover:shadow-[0_20px_40px_rgba(201,161,74,0.05)] group">
-        
-        {/* Micro Layout Indicator */}
-        <div className="absolute top-4 right-4 text-[9px] font-mono tracking-widest text-zinc-300 group-hover:text-[#C9A14A] transition-colors">
-          // SYS_MOD_0{index + 1}
-        </div>
-
-        <div>
-          {/* Flat Premium Icon Frame */}
-          <div className="w-14 h-14 bg-[#111111] flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-105">
-            <service.icon className="text-[#C9A14A]" size={24} strokeWidth={1.2} />
-          </div>
-
-          <span className="font-['Inter'] text-[10px] tracking-[0.35em] text-[#C9A14A] font-bold uppercase block mb-3">
-            {service.focus}
+const ServiceCard = ({ service, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: index * 0.1, duration: 0.8 }}
+    className="group relative overflow-hidden"
+  >
+    <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/5] overflow-hidden rounded-2xl sm:rounded-3xl border border-[#C9A14A]/10 bg-[#111111] shadow-2xl">
+      {/* Background Image with Parallax-like effect on hover */}
+      <img 
+        src={service.image} 
+        alt={service.title} 
+        className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-out"
+      />
+      
+      {/* Premium Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent opacity-90 group-hover:from-[#111111]/95 transition-all duration-500" />
+      
+      {/* Content Overlay */}
+      <div className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-end">
+        <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+          <span className="font-['Cinzel'] text-[10px] tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">
+             // {service.focus}
           </span>
-
-          <h3 className="text-2xl sm:text-3xl font-['Cormorant_Garamond'] font-light text-[#111111] mb-4 leading-tight tracking-tight">
+          
+          <h3 className="font-['Cormorant_Garamond'] text-4xl sm:text-5xl lg:text-4xl xl:text-5xl text-white font-light leading-tight mb-4 group-hover:text-[#C9A14A] transition-colors duration-500">
             {service.title}
           </h3>
 
-          <p className="text-zinc-600 text-base sm:text-lg leading-relaxed font-light mb-8">
-            {service.desc}
-          </p>
+          <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 mb-8">
+            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-light max-w-sm">
+              {service.desc}
+            </p>
+          </div>
+
+          <Link to={`/services/${service.slug}`} className="inline-flex items-center gap-3 text-white text-[11px] tracking-[0.3em] font-bold uppercase group/link">
+            Explore Matrix 
+            <div className="w-8 h-[1px] bg-[#C9A14A] group-hover/link:w-12 transition-all duration-300" />
+            <MoveRight size={14} className="text-[#C9A14A]" />
+          </Link>
         </div>
-
-        <Link to="/contact" className="inline-block">
-          <button className="inline-flex items-center gap-2.5 text-[#111111] text-xs font-bold tracking-[0.3em] uppercase group/btn">
-            Request Matrix Analysis
-            <ArrowRight size={14} className="text-[#C9A14A] transform transition-transform duration-300 group-hover/btn:translate-x-1.5" />
-          </button>
-        </Link>
       </div>
-    </motion.div>
-  );
-};
 
-const VrihadVastuServices = () => {
+      {/* Subtle Grid Pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[radial-gradient(#C9A14A_1px,transparent_1px)] bg-[size:32px_32px]" />
+    </div>
+  </motion.div>
+);
+
+const ServicesPage = () => {
   return (
-    <div className="bg-[#FAF8F4] min-h-screen">
+    <div className="bg-[#FAF9F5] min-h-screen">
       <Breadcrumbs 
         title="Scientific Expertise" 
-        subtitle="From heavy industrial architecture matrices to high-end residential parameters, we calibrate built environments to synchronize perfectly with telluric radiation grids."
+        subtitle="Calibrating built environments to synchronize with universal energy grids through advanced structural energetics."
         image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070"
       />
-      <section className="pb-16 bg-transparent relative overflow-hidden">
-      <MicroGridPattern />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_#FAF8F4_85%)] pointer-events-none" />
-      
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 relative z-10">
-        
-        {/* RESPONSIVE STRUCTURE: GRID FOR DESKTOP / TABLET */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {services.map((service, i) => (
-            <ServiceCard key={i} service={service} index={i} />
-          ))}
-        </div>
 
-        {/* RESPONSIVE STRUCTURE: MOBILE NATIVE SLIDER */}
-        <div className="md:hidden mb-12 services-mobile-slider">
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={16}
-            slidesPerView={1.05}
-            centeredSlides={false}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            className="pb-12"
-          >
+      <section className="py-24 px-6 sm:px-12 lg:px-16 relative overflow-hidden">
+        {/* Architectural Background Elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-[#C9A14A]/[0.02] -skew-x-12 translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-[#C9A14A]/[0.02] skew-x-12 -translate-x-1/2 pointer-events-none" />
+
+        <div className="max-w-[1440px] mx-auto">
+          <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+            <div>
+              <span className="font-['Cinzel'] text-xs tracking-[0.5em] text-[#C9A14A] font-bold uppercase block mb-4">
+                // System Catalog
+              </span>
+              <h2 className="font-['Cormorant_Garamond'] text-5xl sm:text-6xl lg:text-7xl font-light leading-none tracking-tight text-[#111111]">
+                Specialized <br />
+                <span className="italic">Service Matrix</span>
+              </h2>
+            </div>
+            <div className="max-w-md pb-4">
+              <p className="text-zinc-500 font-light text-lg leading-relaxed">
+                From luxury residential architecture to complex industrial footprints, each blueprint is calibrated for maximum human and mechanical efficiency.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
             {services.map((service, i) => (
-              <SwiperSlide key={i} className="h-auto">
-                <ServiceCard service={service} index={i} />
-              </SwiperSlide>
+              <ServiceCard key={i} service={service} index={i} />
             ))}
-          </Swiper>
+          </div>
         </div>
+      </section>
 
-        {/* HIGH-END INSTITUTIONAL CTA CALLOUT */}
+      {/* Bottom CTA Block */}
+      <section className="pb-24 px-6 sm:px-12 lg:px-16">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-[#111111] text-white py-14 px-6 sm:px-12 lg:px-16 relative overflow-hidden shadow-2xl border border-zinc-800"
+          className="bg-[#111111] rounded-[2.5rem] p-12 sm:p-20 relative overflow-hidden flex flex-col items-center text-center group shadow-3xl"
         >
-          {/* Structural Radiance Vector */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#C9A14A]/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute inset-0 bg-[#C9A14A]/[0.03] transition-colors duration-500 group-hover:bg-[#C9A14A]/[0.05]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#C9A14A]/5 blur-[120px] rounded-full" />
           
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 max-w-6xl mx-auto">
-            <div className="max-w-xl">
-              <span className="text-[#C9A14A] font-['Inter'] text-[10px] tracking-[0.4em] font-bold uppercase block mb-2">
-                // System Diagnosis Advisory
-              </span>
-              <h4 className="text-white text-3xl sm:text-4xl font-['Cormorant_Garamond'] font-light tracking-tight">
-                Require Custom Architectural Mapping?
-              </h4>
-              <p className="text-zinc-400 font-light text-sm sm:text-base mt-2">
-                Connect directly with our engineering core to isolate custom telemetry layouts for commercial setups or corporate ground operations.
-              </p>
-            </div>
-            
-            <div className="shrink-0">
-              <Link to="/contact" className="block w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-10 py-4 bg-[#C9A14A] hover:bg-[#b8913f] text-[#111111] font-bold font-['Cinzel'] tracking-[0.25em] text-xs transition-colors duration-300">
-                  Acquire Guidance Matrix
-                </button>
-              </Link>
-            </div>
+          <div className="relative z-10 max-w-2xl">
+            <span className="font-['Cinzel'] text-[10px] tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-6">
+              // Custom Telemetry Request
+            </span>
+            <h2 className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl font-light text-white mb-8 tracking-tight">
+              Looking for a <br />
+              <span className="italic text-[#C9A14A]">Custom Strategy?</span>
+            </h2>
+            <p className="text-zinc-400 font-light text-base sm:text-lg mb-12 leading-relaxed">
+              Our engineering core is available for complex industrial site telemetry, corporate headquarters configuration, and high-end residential consulting worldwide.
+            </p>
+            <Link to="/contact">
+              <button className="px-12 py-5 bg-[#C9A14A] hover:bg-white text-[#111111] font-['Cinzel'] text-xs font-bold tracking-[0.3em] uppercase transition-all duration-500 shadow-xl">
+                Initiate Project Matrix
+              </button>
+            </Link>
           </div>
         </motion.div>
-      </div>
+      </section>
 
-      {/* Customized Pagination Accents */}
-      <style jsx global>{`
-        .services-mobile-slider .swiper-pagination-bullet {
-          background: #C9A14A !important;
-          opacity: 0.25;
-        }
-        .services-mobile-slider .swiper-pagination-bullet-active {
-          opacity: 1;
-          width: 16px;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-        }
-      `}</style>
-    </section>
+      <footer className="py-12 border-t border-[#C9A14A]/10 text-center">
+        <p className="font-['Cinzel'] text-[9px] tracking-[0.5em] text-zinc-400 font-bold uppercase">
+          © 2026 Vrihad Vastu // Engineered Environmental Resonance
+        </p>
+      </footer>
     </div>
   );
 };
 
-export default VrihadVastuServices;
+export default ServicesPage;

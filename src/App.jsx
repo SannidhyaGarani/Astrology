@@ -9,6 +9,7 @@ import ScrollToTop from "./Components/BackToTop";
 import Preloader from "./Components/Preloader";
 import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
+import ServiceDetail from "./pages/ServiceDetail.jsx";
 import Contact from "./pages/Contact.jsx";
 import NotFound from "./Components/Notfound.jsx";
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/:id" element={<ServiceDetail />} />
         <Route path="/contact" element={<Contact />} />
         {/* <Route path="/gallery" element={<Gallery />} /> */}
         <Route path="*" element={<NotFound />} />

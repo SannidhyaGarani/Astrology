@@ -76,7 +76,7 @@ const AboutLegacy = () => {
             {/* The Image Asset */}
             <div
               className="w-full h-full bg-cover bg-center grayscale contrast-[1.05] group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-1000 ease-out"
-              style={{ backgroundImage: "url('/img/Dv.webp')" }}
+              style={{ backgroundImage: "url('/img/a.jpeg')" }}
             />
 
             {/* Ambient Overlay Vignette */}
@@ -126,14 +126,57 @@ const AboutLegacy = () => {
             <div className="h-[1px] w-16 bg-[#C9A14A] mx-auto lg:mx-0 mb-8" />
 
             {/* Editorial Blockquote text wrapper */}
-            <div className="space-y-6 font-['Inter'] text-gray-600 leading-relaxed text-base font-light text-left border-l border-[#C9A14A]/30 pl-6 sm:pl-8 max-w-2xl mx-auto lg:mx-0">
-              <p>
-                Vrihad Vastu was conceived in 2000 as an institution dedicated to the "macro" understanding of structural mechanics. Founded by <strong className="text-[#111111] font-semibold font-['Cinzel'] tracking-wider text-xs">Vastuvid Devendra Singhai</strong>, a gold-medalist and temple Vastu specialist, the firm proved that ancient architectural laws are potent metrics for scaling industrial growth.
-              </p>
-              <p>
-                Today, the legacy operates as a full-tier engineering house. Under the technical leadership of <strong className="text-[#111111] font-semibold font-['Cinzel'] tracking-wider text-xs">Ashish Singhai</strong>, we have translated traditional geometry into **Earth Energetics**—utilizing precision instrumentation to optimize massive layouts for India's corporate infrastructure titans, including Jindal Steel and Haldiram’s.
-              </p>
+            <div className="space-y-8 font-['Inter'] text-gray-600 leading-relaxed text-base font-light text-left border-l border-[#C9A14A]/30 pl-6 sm:pl-8 max-w-4xl mx-auto lg:mx-0">
+              <div className="space-y-2">
+                <h3 className="font-['Cinzel'] text-xl tracking-widest text-[#111111] font-bold uppercase">Ashish Singhai // Vrihad Vastu Expert</h3>
+                <p className="text-[#C9A14A] text-sm tracking-[0.3em] font-bold uppercase">ENERGY SPACE CONSULTANT</p>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-[#111111] uppercase tracking-wider">Scientific Vastu Corrections Without Demolition</h4>
+                <p className="text-zinc-500 font-light">Advanced Space Harmonization for Homes, Flats, Plots & Commercial Sites</p>
+                <p>
+                  Using advanced diagnostic tools like the <strong className="text-[#111111] font-medium">Lecher Antenna</strong> and <strong className="text-[#111111] font-medium">Universal Aura Scanner</strong>, we identify and neutralize negative energies and Geopathic Stress—completely avoiding structural demolition.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                <div>
+                  <h5 className="font-['Cinzel'] text-[10px] tracking-[0.3em] font-bold text-[#C9A14A] uppercase mb-4">Our Specialized Expertise:</h5>
+                  <ul className="space-y-3 text-sm">
+                    <li><strong className="text-zinc-900 font-medium uppercase tracking-tighter text-[11px]">Career & Business:</strong> Accelerating Business Growth & Unlocking New Career Opportunities</li>
+                    <li><strong className="text-zinc-900 font-medium uppercase tracking-tighter text-[11px]">Financial Wellness:</strong> Enhancing Savings, Liquid Cash Flow & Overcoming Stagnation</li>
+                    <li><strong className="text-zinc-900 font-medium uppercase tracking-tighter text-[11px]">Family & Relationships:</strong> Resolving Delays in Marriage & Fostering Deep Family Harmony</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-['Cinzel'] text-[10px] tracking-[0.3em] font-bold text-[#C9A14A] uppercase mb-4 md:mt-0 mt-4">Spatial Excellence:</h5>
+                  <ul className="space-y-3 text-sm">
+                    <li><strong className="text-zinc-900 font-medium uppercase tracking-tighter text-[11px]">Education:</strong> Boosting Focus, Concentration & Success in Studies</li>
+                    <li><strong className="text-zinc-900 font-medium uppercase tracking-tighter text-[11px]">Health & Vitality:</strong> Balancing Space Energies for Better Health Care & Well-being</li>
+                    <li className="italic text-zinc-400 text-xs">...and much more.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="pt-8 mt-4 border-t border-[#C9A14A]/10">
+                <p className="font-['Cinzel'] text-xs tracking-[0.2em] font-bold text-[#C9A14A] uppercase mb-4 italic">NON-DESTRUCTIVE VASTU SOLUTIONS</p>
+                <div className="flex flex-wrap gap-4 text-[10px] tracking-[0.2em] font-bold uppercase mb-6">
+                   <span className="px-2 py-1 bg-zinc-100 border border-zinc-200">Scan • Analyze • Harmonize</span>
+                   <span className="px-2 py-1 text-zinc-400 font-light italic">No Demolition. Pure Science. Proven Results.</span>
+                </div>
+                
+                <p className="text-xs font-bold tracking-widest text-[#111111] uppercase mb-4 font-['Cinzel']">Transforming Spaces, Elevating Lives:</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[10px] text-zinc-500 uppercase tracking-widest font-medium">
+                  <p>• New Opportunities in Career & Business Growth</p>
+                  <p>• Overcoming Delays in Marriage & Relationships</p>
+                  <p>• Academic Success & Sharper Focus for Students</p>
+                  <p>• Financial Stability & Sustained Savings</p>
+                  <p>• Enhanced Health, Harmony, and Peace of Mind</p>
+                </div>
+              </div>
             </div>
+
           </motion.div>
 
           {/* Grid Layout: Timeline split from Awards list */}
