@@ -100,7 +100,7 @@ const AboutLegacy = () => {
             </div>
             <p className="font-['Cinzel'] text-3xl sm:text-4xl font-bold text-[#C9A14A] leading-none mt-1">25+</p>
             <div className="h-[1px] w-full bg-white/10 my-2" />
-            <p className="font-['Inter'] text-sm uppercase tracking-[0.15em] text-gray-300 font-light leading-relaxed">Spatial Engineering Mastery</p>
+            <p className="font-['Inter'] text-sm uppercase tracking-[0.15em] text-gray-300 font-light leading-relaxed">Vastu & Earth Energetics</p>
           </motion.div>
         </div>
 
@@ -116,11 +116,11 @@ const AboutLegacy = () => {
             className="text-center lg:text-left"
           >
             <span className="font-['Cinzel'] text-sm tracking-[0.5em] text-[#C9A14A] font-bold uppercase block mb-4">
-              Decades of Alchemy
+              Our Journey
             </span>
             <h2 className="font-['Cormorant_Garamond'] text-4xl sm:text-5xl xl:text-6xl text-[#111111] leading-[1.12] font-light mb-6">
-              A Legacy Rooted <br />
-              <span className="italic text-[#C9A14A] font-normal">in Golden Resonance</span>
+              A Legacy Built <br />
+              <span className="italic text-[#C9A14A] font-normal">on Trust & Science</span>
             </h2>
 
             <div className="h-[1px] w-16 bg-[#C9A14A] mx-auto lg:mx-0 mb-8" />
@@ -128,8 +128,8 @@ const AboutLegacy = () => {
             {/* Editorial Blockquote text wrapper */}
             <div className="space-y-8 font-['Inter'] text-gray-600 leading-relaxed text-base font-light text-left border-l border-[#C9A14A]/30 pl-6 sm:pl-8 max-w-4xl mx-auto lg:mx-0">
               <div className="space-y-2">
-                <h3 className="font-['Cinzel'] text-xl tracking-widest text-[#111111] font-bold uppercase">Ashish Singhai // Vrihad Vastu Expert</h3>
-                <p className="text-[#C9A14A] text-sm tracking-[0.3em] font-bold uppercase">ENERGY SPACE CONSULTANT</p>
+                <h3 className="font-['Cinzel'] text-xl tracking-widest text-[#111111] font-bold uppercase">Ashish Singhai</h3>
+                <p className="text-[#C9A14A] text-sm tracking-[0.3em] font-bold uppercase">Lead Consultant & Vastu Expert</p>
               </div>
 
               <div className="space-y-4">
@@ -186,14 +186,14 @@ const AboutLegacy = () => {
             <div className="md:col-span-7 flex flex-col gap-2 relative z-10">
               <TimelineNode
                 year="2000"
-                title="The Genesis"
-                description="Establishment of Vrihad Vastu in Indore, specializing in high-precision structural blueprints and industrial spatial planning."
+                title="Our Start"
+                description="We started Vrihad Vastu in Indore, offering space planning and architectural consulting."
                 delay={0.1}
               />
               <TimelineNode
                 year="Present"
-                title="Earth Energetics Era"
-                description="Implementation of Lecher Antenna analytics and electromagnetic field diagnostics for elite enterprise environments."
+                title="Earth Energetics"
+                description="We introduced scientific tools like the Lecher Antenna to catch and block geopathic stress and electromagnetic fields."
                 delay={0.2}
               />
             </div>
@@ -201,7 +201,7 @@ const AboutLegacy = () => {
             {/* Awards & Badges Vertical Array */}
             <div className="md:col-span-5 flex flex-col gap-3.5 md:border-l border-[#C9A14A]/20 md:pl-6 w-full">
               <p className="font-['Cinzel'] text-sm tracking-[0.25em] text-[#C9A14A] font-bold uppercase mb-1 text-center md:text-left">
-                Award-Winning Mastery
+                Awards & Recognition
               </p>
               
               {[

@@ -20,9 +20,9 @@ const PremiumFooter = () => {
       { name: "Contact", path: "/contact" },
     ],
     expertise: [
-      { name: "Industrial Analytics", path: "/services" },
+      { name: "Industrial Vastu", path: "/services" },
       { name: "Commercial Vastu", path: "/services" },
-      { name: "Residential Healing", path: "/services" },
+      { name: "Residential Vastu", path: "/services" },
       { name: "Earth Energetics", path: "/services" },
     ]
   };
@@ -51,7 +51,7 @@ const PremiumFooter = () => {
             </Link>
             
             <p className="font-['Inter'] text-zinc-400 text-sm sm:text-base leading-relaxed tracking-wide max-w-sm font-light">
-              We fuse ancient structural geometry with definitive space physics to synchronize architectural layouts. Restoring natural energetic fields in enterprise infrastructures.
+              Vrihad Vastu (Est. 2000) combines ancient Vastu Shastra wisdom with modern Earth Energetics to help homes, offices, and factories become healthier and more productive spaces.
             </p>
             
             {/* Minimal Square Nodes for Social footprint */}
@@ -72,7 +72,7 @@ const PremiumFooter = () => {
 
           {/* DIRECTORY NAVIGATION */}
           <div className="lg:col-span-2 lg:pl-4">
-            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">// Matrix Index</span>
+            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">Navigation</span>
             <h4 className="text-[#C9A14A] text-sm tracking-[0.25em] uppercase font-bold mb-6 font-['Inter']">Directory</h4>
             <ul className="space-y-5">
               {footerLinks.navigation.map((link, i) => (
@@ -88,7 +88,7 @@ const PremiumFooter = () => {
 
           {/* SOLUTIONS INDEX */}
           <div className="lg:col-span-2">
-            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">// CORE_FUNCTIONS</span>
+            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">Our Services</span>
             <h4 className="text-[#C9A14A] text-sm tracking-[0.25em] uppercase font-bold mb-6 font-['Inter']">Solutions</h4>
             <ul className="space-y-5">
               {footerLinks.expertise.map((link, i) => (
@@ -104,18 +104,18 @@ const PremiumFooter = () => {
 
           {/* GLOBAL FIELD COORDINATES */}
           <div className="lg:col-span-3 lg:pl-4">
-            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">// LOC_REGISTRY</span>
-            <h4 className="text-[#C9A14A] text-sm tracking-[0.25em] uppercase font-bold mb-6 font-['Inter']">Global Presence</h4>
+            <span className="text-xs font-mono tracking-[0.35em] text-zinc-500 block mb-8 uppercase font-bold">Get In Touch</span>
+            <h4 className="text-[#C9A14A] text-sm tracking-[0.25em] uppercase font-bold mb-6 font-['Inter']">Contact</h4>
             <div className="space-y-6">
               {/* Locations */}
               <div className="flex items-start gap-4 cursor-default group">
                 <MapPin className="w-5 h-5 text-[#C9A14A] shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
                   <p className="text-zinc-300 text-sm leading-relaxed tracking-[0.15em] uppercase font-bold">
-                    Studio Infrastructure:
+                    Offices:
                   </p>
                   <p className="text-zinc-400 text-sm font-mono mt-1 tracking-wider uppercase">
-                    Noida • Indore • Katni
+                    Delhi • Faridabad • Indore
                   </p>
                 </div>
               </div>
@@ -123,18 +123,20 @@ const PremiumFooter = () => {
               {/* Direct Comms */}
               <div className="space-y-4 pt-2 border-t border-zinc-900">
                 <div className="flex flex-col gap-1">
-                  <span className="text-[10px] text-zinc-500 tracking-[0.2em] uppercase font-bold">Direct Line:</span>
-                  <a href="tel:+919312437037" className="text-zinc-300 text-sm font-mono hover:text-[#C9A14A] transition-colors">+91 9312437037</a>
+                  <span className="text-[10px] text-zinc-500 tracking-[0.2em] uppercase font-bold">Phone:</span>
+                  <a href="tel:+919312437037" className="text-[#C9A14A] text-sm font-bold font-mono hover:text-[#b8902e] transition-colors">+91 93124 37037</a>
+                  <a href="tel:+919770066611" className="text-[#C9A14A] text-sm font-bold font-mono hover:text-[#b8902e] transition-colors">+91 97700 66611</a>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-[10px] text-zinc-500 tracking-[0.2em] uppercase font-bold">Inquiry Registry:</span>
-                  <a href="mailto:info@vrihadvastu.com" className="text-zinc-300 text-sm font-mono hover:text-[#C9A14A] transition-colors">info@vrihadvastu.com</a>
+                  <span className="text-[10px] text-zinc-500 tracking-[0.2em] uppercase font-bold">Email:</span>
+                  <a href="mailto:connect@vrihadvastu.com" className="text-zinc-300 text-sm font-mono hover:text-[#C9A14A] transition-colors">connect@vrihadvastu.com</a>
+                  <a href="mailto:ask@vrihadvastu.com" className="text-zinc-300 text-sm font-mono hover:text-[#C9A14A] transition-colors">ask@vrihadvastu.com</a>
                 </div>
               </div>
               
               <div className="pt-4">
                 <Link to="/contact" className="inline-flex items-center gap-4 text-white text-sm font-bold tracking-[0.25em] uppercase border-b border-[#C9A14A]/40 pb-2 hover:border-[#C9A14A] hover:gap-6 transition-all duration-300 group">
-                  Initialize Consultation 
+                  Book a Consultation
                   <ArrowUpRight className="w-4 h-4 text-[#C9A14A] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
                 </Link>
               </div>
@@ -146,14 +148,14 @@ const PremiumFooter = () => {
         {/* BOTTOM METRIC BAR */}
         <div className="pt-10 mt-4 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center gap-6">
           <p className="text-sm text-zinc-500 tracking-[0.3em] uppercase font-mono text-center sm:text-left">
-            © {currentYear} VRIHADVASTU CORE. DEVELOPED BY DESIGN STUDIO UNIT.
+            © {currentYear} Vrihad Vastu. Vedic Architecture & Earth Energetics.
           </p>
           <div className="flex gap-10">
             <a href="#" className="text-sm text-zinc-500 hover:text-[#C9A14A] transition-colors duration-300 tracking-[0.25em] font-mono uppercase">
-              Privacy_Protocol
+              Privacy Policy
             </a>
             <a href="#" className="text-sm text-zinc-500 hover:text-[#C9A14A] transition-colors duration-300 tracking-[0.25em] font-mono uppercase">
-              Terms_Of_Usage
+              Terms of Use
             </a>
           </div>
         </div>

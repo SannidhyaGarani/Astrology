@@ -82,22 +82,22 @@ const ServiceCard = ({ title, description, icon: Icon, delay, features }) => {
 const ServicesSection = () => {
   const services = [
     {
-      title: "Industrial Earth Energetics",
-      description: "High-stakes diagnostic auditing for heavy manufacturing plants. We isolate and neutralize Geopathic Stress corridors to mitigate machinery fatigue and safeguard labor workflows.",
+      title: "Industrial Vastu",
+      description: "For factories and manufacturing plants, we find and fix harmful earth energy zones. We check where heavy machines are placed to prevent frequent breakdowns, reduce accidents, and keep workers safe and productive.",
       icon: Factory,
-      features: ["Machinery Longevity Matrices", "Geopathic Reversal Protocols", "Safety Optimization Metrics"]
+      features: ["Machine Breakdown Prevention", "Geopathic Stress Removal", "Worker Safety & Efficiency"]
     },
     {
-      title: "Commercial Vastu Solutions",
-      description: "Strategic energy mechanics tailored for corporate headquarters. Adjusting leadership layouts and core directional nodes to unlock capital liquidity and cultural equilibrium.",
+      title: "Commercial Vastu",
+      description: "For offices and businesses, we analyse the energy layout to improve leadership, financial flow, and team harmony. We find the best power spot for the CEO's desk and remove energy blockages that harm profits.",
       icon: Building2,
-      features: ["Financial Flow Safeguards", "Executive Command Realignment", "Enterprise System Longevity"]
+      features: ["CEO Power Spot Analysis", "Financial Flow Improvement", "Employee Wellness Boost"]
     },
     {
-      title: "Residential Spatial Healing",
-      description: "Re-engineering private real estate into high-vibrational sanctuaries. Specialized environmental adjustments targeting sleep architecture and structural memory without structural changes.",
+      title: "Residential Vastu",
+      description: "For homes, we focus on health, sleep, and family peace. We check your bed position for harmful earth energy lines, balance the five elements, and ensure the centre of your home — the Brahmasthan — is free and open.",
       icon: Home,
-      features: ["Sleep Hygiene Enhancements", "Elemental Node Balancing", "Structural Micro-Modifications"]
+      features: ["Sleep & Health Improvement", "Five Element Balancing", "Brahmasthan Correction"]
     }
   ];
 
@@ -120,7 +120,7 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               className="font-['Cinzel'] text-sm tracking-[0.5em] text-[#C9A14A] font-bold uppercase block"
             >
-              Specialized Interventions
+              Our Services
             </motion.span>
           </div>
           
@@ -131,8 +131,8 @@ const ServicesSection = () => {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="font-['Cormorant_Garamond'] text-4xl sm:text-5xl lg:text-6xl text-[#FAF9F5] leading-[1.15] font-light max-w-4xl mx-auto"
           >
-            Engineering Architectural Harmony <br />
-            <span className="italic text-[#C9A14A] font-normal font-serif">Across Corporate Ecosystems</span>
+            From Homes to Heavy Industry <br />
+            <span className="italic text-[#C9A14A] font-normal font-serif">We Heal Every Space</span>
           </motion.h2>
           
           <motion.div
@@ -168,7 +168,7 @@ const ServicesSection = () => {
               <Activity className="text-[#C9A14A] w-3.5 h-3.5" />
             </div>
             <span className="font-['Inter'] text-sm uppercase tracking-[0.2em] text-gray-400 max-w-md leading-relaxed font-light">
-              Diagnostic precision driven by calibrated **Lecher Antenna** metrics.
+              Measurements done using the Lecher Antenna for accurate results.
             </span>
           </div>
           
@@ -177,7 +177,7 @@ const ServicesSection = () => {
               <ShieldCheck className="text-[#C9A14A] w-3.5 h-3.5" />
             </div>
             <span className="font-['Inter'] text-sm uppercase tracking-[0.2em] text-gray-400 max-w-md leading-relaxed font-light">
-              Retained assets verified by multi-tier **Industrial Titans**.
+              Trusted by Jindal Steel, Haldiram's, and Today Tea.
             </span>
           </div>
         </motion.div>

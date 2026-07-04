@@ -29,7 +29,7 @@ const LabTab = ({ id, label, icon: Icon, active, onClick }) => (
           layoutId="activeSubLight"
           className="text-sm text-[#C9A14A] font-['Inter'] uppercase tracking-[0.15em] mt-1 font-semibold"
         >
-          Active Diagnostic Matrix
+          Active Module
         </motion.span>
       )}
     </div>
@@ -42,9 +42,9 @@ const EarthEnergeticsLab = () => {
   const content = {
     gs: {
       title: "Geopathic Stress",
-      subtitle: "Telluric Frequency Analysis",
-      description: "Subterranean disruptions such as concentrated underwater veins and tectonic fault dynamics distort the Earth's native geodynamic resonance. Our precise diagnostics chart these hidden anomalies to protect structural equilibrium.",
-      stats: ["Schumann Resonance Alignment", "Shielding Bio-Frequencies", "Field Distortion Mapping"],
+      subtitle: "Earth Frequency Check",
+      description: "Underground water streams and rock cracks can disturb the Earth's natural energy. This disturbed energy rises to the surface and harms the people and machines above it. We find these hidden zones and fix them.",
+      stats: ["Underground Water Detection", "Fault Line Mapping", "Harmful Frequency Blocking"],
       icon: <Moon className="w-20 h-20 text-[#C9A14A]/8 absolute -top-4 -right-4 pointer-events-none" />,
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full stroke-[#C9A14A] fill-none">
@@ -61,10 +61,10 @@ const EarthEnergeticsLab = () => {
       )
     },
     elements: {
-      title: "Panchatattva Balance",
-      subtitle: "Five Elements Equilibrium",
-      description: "Water, Air, Fire, Earth, and Space dictate structural health. We calculate spatial energy relationships using ancient frameworks to neutralize directional blockages and cultivate deep long-term prosperity.",
-      stats: ["Elemental Ratio Analysis", "Tattva Vector Correction", "Zone-Specific Balancing"],
+      title: "Five Elements Balance",
+      subtitle: "Panchatattva Harmony",
+      description: "Water, Air, Fire, Earth, and Space all have their proper place in a building. When one element is in the wrong zone — like a kitchen in the north — it creates health issues and family problems. We correct these imbalances.",
+      stats: ["Element Zone Analysis", "Direction Correction", "Space-by-Space Balancing"],
       icon: <Sun className="w-20 h-20 text-[#C9A14A]/8 absolute -top-4 -right-4 pointer-events-none" />,
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full stroke-[#C9A14A] fill-none">
@@ -79,10 +79,10 @@ const EarthEnergeticsLab = () => {
       )
     },
     grids: {
-      title: "Directional Grids",
+      title: "Energy Grids",
       subtitle: "Hartmann & Curry Nets",
-      description: "The global footprint is systematically wrapped in electromagnetic networks. We trace Hartmann and Curry intersections to prevent structural elements from sitting directly over volatile stress nodes.",
-      stats: ["Curry Diagonal Mapping", "Hartmann Lattice Audits", "Vortex Neutralization Protocols"],
+      description: "The Earth is covered by invisible energy lines called Hartmann and Curry grids. Where these lines cross, they create stress points. Sleeping or working right on these crossing points can cause health problems. We map and avoid these spots.",
+      stats: ["Curry Grid Mapping", "Hartmann Line Detection", "Stress Point Neutralization"],
       icon: <Compass className="w-20 h-20 text-[#C9A14A]/8 absolute -top-4 -right-4 pointer-events-none" />,
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full stroke-[#C9A14A] fill-none">
@@ -98,10 +98,10 @@ const EarthEnergeticsLab = () => {
       )
     },
     healing: {
-      title: "Etheric Clearing",
-      subtitle: "Vibrational Land Reset",
-      description: "Land segments capture and maintain generational memory loops. Our field corrections perform a deep architectural reset, dissolving historical blockages to clear paths for ongoing strategic growth.",
-      stats: ["Anamnestic Clearing", "Pranic Infusion Formulas", "Harmonic Stabilization"],
+      title: "Land Healing",
+      subtitle: "Clearing Old Energy",
+      description: "Land holds the memory of past events — like old battles, tragedy, or business failures. This old energy can block new growth. We clear this stored energy using sound, crystals, and special geometric tools to give the land a fresh, clean start.",
+      stats: ["Historical Energy Clearing", "Crystal & Yantra Placement", "Positive Energy Activation"],
       icon: <Sparkles className="w-20 h-20 text-[#C9A14A]/8 absolute -top-4 -right-4 pointer-events-none" />,
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full stroke-[#C9A14A] fill-none">
@@ -135,7 +135,7 @@ const EarthEnergeticsLab = () => {
                 </span>
               </div>
               <h2 className="text-[#FAF9F5] font-['Cormorant_Garamond'] text-3xl font-light">
-                Metaphysical <span className="italic text-[#C9A14A]">Auditing</span>
+                Earth <span className="italic text-[#C9A14A]">Energy Audit</span>
               </h2>
             </div>
             
@@ -222,13 +222,13 @@ const EarthEnergeticsLab = () => {
       </div>
 
       {/* Industrial Metadata Indicator Ribbon */}
-      <div className="absolute bottom-8 right-8 hidden sm:flex gap-4 items-center opacity-80">
-        <div className="text-right">
-          <p className="font-['Cinzel'] text-sm tracking-[0.25em] text-[#C9A14A] font-bold uppercase">Laboratory Paradigm</p>
-          <p className="font-['Inter'] text-gray-500 text-sm uppercase tracking-wider font-medium mt-0.5">High-Tier Spatial Standards</p>
+        <div className="absolute bottom-8 right-8 hidden sm:flex gap-4 items-center opacity-80">
+          <div className="text-right">
+            <p className="font-['Cinzel'] text-sm tracking-[0.25em] text-[#C9A14A] font-bold uppercase">Energy Audit</p>
+            <p className="font-['Inter'] text-gray-500 text-sm uppercase tracking-wider font-medium mt-0.5">Scan · Analyse · Harmonise</p>
+          </div>
+          <div className="w-[1px] h-8 bg-[#C9A14A]/30" />
         </div>
-        <div className="w-[1px] h-8 bg-[#C9A14A]/30" />
-      </div>
 
     </section>
   );

@@ -158,7 +158,7 @@ const ServiceDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-6">// Institutional Vision</span>
+                <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-6">About This Service</span>
                 <h2 className="font-['Cormorant_Garamond'] text-4xl sm:text-5xl font-light leading-tight mb-8 text-[#111111]">
                   {data.heroTitle}
                 </h2>
@@ -210,7 +210,7 @@ const ServiceDetail = () => {
                   className="bg-[#111111] p-10 rounded-[2rem] text-white shadow-2xl relative overflow-hidden"
                 >
                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A14A]/10 blur-3xl rounded-full" />
-                   <h3 className="font-['Cormorant_Garamond'] text-3xl font-light mb-8 text-[#C9A14A] italic">Strategic Benefits</h3>
+                   <h3 className="font-['Cormorant_Garamond'] text-3xl font-light mb-8 text-[#C9A14A] italic">Key Benefits</h3>
                    <ul className="space-y-5">
                       {data.benefits.map((benefit, i) => (
                         <li key={i} className="flex items-start gap-4">
@@ -223,7 +223,7 @@ const ServiceDetail = () => {
 
                 {/* Consultation Process List */}
                 <div className="p-10 border border-[#C9A14A]/10 bg-white rounded-[2rem]">
-                  <h3 className="font-['Cinzel'] text-xs tracking-[0.3em] font-bold text-[#111111] uppercase mb-8">Consultation Workflow</h3>
+                  <h3 className="font-['Cinzel'] text-xs tracking-[0.3em] font-bold text-[#111111] uppercase mb-8">Our Process</h3>
                   <div className="space-y-6">
                     {data.process.map((step, i) => (
                       <div key={i} className="flex gap-6 group">
@@ -273,7 +273,7 @@ const ServiceDetail = () => {
 
       <footer className="py-12 text-center border-t border-[#C9A14A]/10 bg-white">
         <p className="text-[9px] tracking-[0.5em] text-zinc-400 font-bold uppercase transition-colors hover:text-[#C9A14A]">
-          © 2026 Vrihad Vastu // Engineered Environmental Resonance
+          © 2026 Vrihad Vastu // Vedic Architecture & Earth Energetics
         </p>
       </footer>
     </div>

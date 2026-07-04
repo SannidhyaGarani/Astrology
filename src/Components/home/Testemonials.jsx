@@ -33,32 +33,32 @@ const StatCounter = ({ value, suffix = "", duration = 2 }) => {
 const BenefitsSection = () => {
   const benefits = [
     {
-      title: "Increased Productivity",
+      title: "More Productivity",
       val: "42",
       suffix: "%",
       icon: TrendingUp,
-      desc: "Removal of geopathic interference allows for deeper neural flow states."
+      desc: "When harmful earth energies are removed, workers focus better and get more done."
     },
     {
-      title: "Enhanced Vitality",
+      title: "Better Health & Sleep",
       val: "68",
       suffix: "%",
       icon: Heart,
-      desc: "Alignment with the Schumann resonance improves circadian sleep cycles."
+      desc: "Fixing your bed position away from geopathic stress lines leads to deeper, more restful sleep."
     },
     {
-      title: "Financial Growth",
+      title: "Business Growth",
       val: "35",
       suffix: "x",
       icon: Coins,
-      desc: "Harmonized spaces attract abundance by clearing stagnant energy knots."
+      desc: "Balanced spaces attract better opportunities and help money flow freely into the business."
     },
     {
-      title: "Reduced Breakdowns",
-      val: "90",
+      title: "Fewer Breakdowns",
+      val: "60",
       suffix: "%",
       icon: ShieldCheck,
-      desc: "Stabilizing telluric currents minimizes technical and emotional volatility."
+      desc: "Moving machines away from stress zones reduces unexpected breakdowns and repair costs."
     }
   ];
 
@@ -75,7 +75,7 @@ const BenefitsSection = () => {
             transition={{ duration: 0.6 }}
             className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
           >
-            The Quantified Impact
+            Real Results
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ const BenefitsSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl text-[#FAF9F5] leading-[1.1] font-medium italic"
           >
-            Numerical <span className="not-italic font-light text-[#C9A14A]">Proof of Alignment</span>
+            The <span className="not-italic font-light text-[#C9A14A]">Impact We Create</span>
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -123,21 +123,21 @@ const BenefitsSection = () => {
 // --- TESTIMONIALS SECTION ---
 const testimonials = [
   {
-    quote: "My estate felt 'heavy' for years. Within weeks of the harmonization, the atmosphere shifted. My sleep is deeper and my focus is razor-sharp.",
-    author: "Elena Vance",
-    role: "Tech Founder",
+    quote: "My home felt heavy and my family was always falling sick. After Ashish Singhai's energy audit and bed position correction, our health improved greatly within a month.",
+    author: "Sunita Agarwal",
+    role: "Homeowner, Indore",
     rating: 5
   },
   {
-    quote: "The Lecher Antenna diagnosis revealed water veins I never knew existed. Fixing these anomalies literally saved my physical health.",
-    author: "Julian Thorne",
-    role: "Architectural Designer",
+    quote: "We had unexplained machine breakdowns every week at our factory. Vrihad Vastu found a geopathic stress line right under the machine. After the remedy, breakdowns dropped by more than half.",
+    author: "Rakesh Jain",
+    role: "Factory Owner, Faridabad",
     rating: 5
   },
   {
-    quote: "We saw a 30% increase in team output after the Vastu alignment of our office. It sounds like magic, but the metrics don't lie.",
-    author: "Marcus Aurelius",
-    role: "Private Equity",
+    quote: "Our office team was always tired and unmotivated. After the Vastu energy correction, we saw a visible change in team energy and our sales improved in the next quarter.",
+    author: "Priya Mehta",
+    role: "Corporate Director, Delhi",
     rating: 5
   }
 ];
@@ -166,14 +166,14 @@ const TestimonialSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
-        >Voices of the Aligned</motion.span>
+        >What Our Clients Say</motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-['Cormorant_Garamond'] text-4xl lg:text-5xl text-[#1A1A1A] leading-[1.1] font-medium italic mb-2"
         >
-          What Our <span className="not-italic font-light text-[#C9A14A]">Clients Say</span>
+          Real People, <span className="not-italic font-light text-[#C9A14A]">Real Results</span>
         </motion.h2>
         <motion.div
           initial={{ scaleX: 0 }}

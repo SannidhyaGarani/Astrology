@@ -72,7 +72,7 @@ const ServiceCard = ({ service, index }) => (
           </div>
 
           <Link to={`/services/${service.slug}`} className="inline-flex items-center gap-3 text-white text-[11px] tracking-[0.3em] font-bold uppercase group/link">
-            Explore Matrix 
+            Learn More
             <div className="w-8 h-[1px] bg-[#C9A14A] group-hover/link:w-12 transition-all duration-300" />
             <MoveRight size={14} className="text-[#C9A14A]" />
           </Link>
@@ -89,8 +89,8 @@ const ServicesPage = () => {
   return (
     <div className="bg-[#FAF9F5] min-h-screen">
       <Breadcrumbs 
-        title="Scientific Expertise" 
-        subtitle="Calibrating built environments to synchronize with universal energy grids through advanced structural energetics."
+        title="Our Services" 
+        subtitle="Vrihad Vastu offers expert Vastu and Earth Energetics consultations for homes, offices, and industrial units — without any demolition."
         image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070"
       />
 
@@ -103,16 +103,16 @@ const ServicesPage = () => {
           <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
               <span className="font-['Cinzel'] text-xs tracking-[0.5em] text-[#C9A14A] font-bold uppercase block mb-4">
-                // System Catalog
+                What We Offer
               </span>
               <h2 className="font-['Cormorant_Garamond'] text-5xl sm:text-6xl lg:text-7xl font-light leading-none tracking-tight text-[#111111]">
                 Specialized <br />
-                <span className="italic">Service Matrix</span>
+                <span className="italic">Services</span>
               </h2>
             </div>
             <div className="max-w-md pb-4">
               <p className="text-zinc-500 font-light text-lg leading-relaxed">
-                From luxury residential architecture to complex industrial footprints, each blueprint is calibrated for maximum human and mechanical efficiency.
+                From homes to large factories, we offer Vastu and Earth Energetics solutions that improve health, productivity, and business growth — all without demolition.
               </p>
             </div>
           </div>
@@ -138,18 +138,18 @@ const ServicesPage = () => {
           
           <div className="relative z-10 max-w-2xl">
             <span className="font-['Cinzel'] text-[10px] tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-6">
-              // Custom Telemetry Request
+              Get In Touch
             </span>
             <h2 className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl font-light text-white mb-8 tracking-tight">
-              Looking for a <br />
-              <span className="italic text-[#C9A14A]">Custom Strategy?</span>
+              Need a <br />
+              <span className="italic text-[#C9A14A]">Custom Solution?</span>
             </h2>
             <p className="text-zinc-400 font-light text-base sm:text-lg mb-12 leading-relaxed">
-              Our engineering core is available for complex industrial site telemetry, corporate headquarters configuration, and high-end residential consulting worldwide.
+              Every property is unique. Contact us for a personalised consultation — whether it's a home, office, factory, or a large development project.
             </p>
             <Link to="/contact">
               <button className="px-12 py-5 bg-[#C9A14A] hover:bg-white text-[#111111] font-['Cinzel'] text-xs font-bold tracking-[0.3em] uppercase transition-all duration-500 shadow-xl">
-                Initiate Project Matrix
+                Request a Consultation
               </button>
             </Link>
           </div>

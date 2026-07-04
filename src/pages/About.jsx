@@ -33,8 +33,8 @@ const About = () => {
   return (
     <div className="bg-[#FAF9F5] text-[#111111] min-h-screen font-['Inter'] selection:bg-[#C9A14A]/20 overflow-x-hidden">
       <Breadcrumbs 
-        title="Institutional Legacy" 
-        subtitle="A quarter-century odyssey translating architectural Vastu into structural Earth Energetics—calibrating landmarks for pristine harmonic output."
+        title="About Us" 
+        subtitle="For over 25 years, we have helped map and balance earth energy in homes, offices, and factories across India."
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069"
       />
 
@@ -49,14 +49,14 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">
-                // The Heritage Outline
+                Our History
               </span>
               <h2 className="font-['Cormorant_Garamond'] text-5xl lg:text-7xl font-light leading-[1.05] tracking-tight mb-8">
                 A Twenty-Five Year <br />
-                <span className="italic">Profound Legacy</span>
+                <span className="italic">History & Vision</span>
               </h2>
               <p className="text-zinc-600 font-light text-lg leading-relaxed max-w-xl mb-10">
-                For over two decades, Vrihad Vastu has proven that architectural foundations act as living, dynamic energy matrix ecosystems. We don't just build; we calibrate spaces to resonant with the natural laws of energy.
+                For over two decades, Vrihad Vastu has shown that buildings and workspaces act as living energy systems. We help align your property with the natural laws of energy to create spaces where people and businesses can thrive.
               </p>
               
               <div className="grid grid-cols-2 gap-8">
@@ -86,7 +86,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
                 <span className="text-white/70 text-[10px] tracking-[0.3em] uppercase block mb-2">Featured Project</span>
-                <h4 className="text-white text-xl font-['Cinzel']">Institutional Calibration Block Alpha</h4>
+                <h4 className="text-white text-xl font-['Cinzel']">Residential Harmonization Project</h4>
               </div>
             </motion.div>
           </div>
@@ -98,8 +98,8 @@ const About = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C9A14A]/5 rounded-full blur-[120px] -mr-64 -mt-64" />
         <div className="max-w-[1280px] mx-auto relative z-10">
           <div className="mb-16">
-            <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">// Founding Director</span>
-            <h2 className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl font-light italic">The Heritage Visionary</h2>
+            <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">Our Founder</span>
+            <h2 className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl font-light italic">The Founder's Vision</h2>
           </div>
 
           <div className="max-w-5xl">
@@ -114,7 +114,7 @@ const About = () => {
                   <span className="text-xs tracking-[0.3em] uppercase font-bold text-[#C9A14A]">Gold Medalist Vastu Expert</span>
                 </div>
                 <p className="text-zinc-700 text-xl font-light leading-relaxed mb-8 italic border-l-2 border-[#C9A14A]/30 pl-6">
-                  "Architecture is not merely structural layout; it is physical alignment with the macro-geometry of the universe."
+                  "Architecture is not just about brick and mortar; it is about aligning our spaces with the earth's natural energy."
                 </p>
                 <p className="text-zinc-500 text-lg font-light leading-relaxed">
                   With over 25 years of deep research, Devendra Singhai has committed his life to decoding foundational energy blueprints, transforming ancient Vedic principles into precise physical equations for modern structures.
@@ -155,8 +155,8 @@ const About = () => {
 
                 {/* Accent Badge */}
                 <div className="absolute -bottom-6 -right-6 bg-[#111111] text-white p-6 rounded-2xl shadow-xl border border-white/10 hidden md:block">
-                  <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#C9A14A] block mb-1">Expertise Status</span>
-                  <span className="font-['Cinzel'] text-sm font-bold">Scientific Vanguard</span>
+                  <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#C9A14A] block mb-1">Vastu Specialist</span>
+                  <span className="font-['Cinzel'] text-sm font-bold">Ashish Singhai</span>
                 </div>
               </div>
             </motion.div>
@@ -169,9 +169,9 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-7 order-1 lg:order-2"
             >
-              <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">// Vrihad Vastu Expert</span>
+              <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">Lead Consultant</span>
               <h2 className="font-['Cormorant_Garamond'] text-5xl lg:text-7xl font-light mb-2">Ashish Singhai</h2>
-              <h4 className="font-['Cinzel'] text-sm tracking-[0.2em] font-bold text-zinc-400 uppercase mb-8">ENERGY SPACE CONSULTANT</h4>
+              <h4 className="font-['Cinzel'] text-sm tracking-[0.2em] font-bold text-zinc-400 uppercase mb-8">Vastu & Earth Energetics expert</h4>
               
               <div className="space-y-8 mb-12">
                 <div className="space-y-2">
@@ -265,21 +265,21 @@ const About = () => {
       <section className="py-24 px-6 sm:px-12 lg:px-16 bg-white border-y border-[#C9A14A]/10">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-4">
-            <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">// Expertise Matrix</span>
-            <h2 className="font-['Cormorant_Garamond'] text-5xl font-light mb-6">Specialized <br /> <span className="italic">Interventions</span></h2>
+            <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">Our Services</span>
+            <h2 className="font-['Cormorant_Garamond'] text-5xl font-light mb-6">Key Solutions</h2>
             <p className="text-zinc-600 text-base font-light leading-relaxed mb-8">
-              We provide customized Vastu & Energy Audits for high-stakes environments, focusing on measurable performance metrics.
+              We offer personalized Vastu and Earth Energy audits for homes, offices, and factories to improve health, sleep, and operations.
             </p>
             <Link to="/services" className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] font-bold uppercase hover:text-[#C9A14A] transition-colors group">
-              Explore Full Capabilities <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Explore Our Services <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
           
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-            <FeatureItem icon={Briefcase} title="Corporate Growth" desc="Accelerating business velocity & unlocking leadership stagnant zones." />
-            <FeatureItem icon={Wallet} title="Financial Flow" desc="Enhancing liquidity paths & resolving mechanical financial bottlenecks." />
-            <FeatureItem icon={Users} title="Relationship Sync" desc="Harmonizing collective field energies for seamless collaboration." />
-            <FeatureItem icon={HeartPulse} title="Vitality Engine" desc="Balancing stressors for peak biological & spatial performance." />
+            <FeatureItem icon={Briefcase} title="Business Growth" desc="Boost team productivity and clear stale or blocked business energies." />
+            <FeatureItem icon={Wallet} title="Financial Flow" desc="Improve financial savings and resolve obstacles to money flow." />
+            <FeatureItem icon={Users} title="Family & Office Harmony" desc="Bring back family peace, work harmony, and better partner dynamics." />
+            <FeatureItem icon={HeartPulse} title="Health & Energy" desc="Remove harmful grid line stress for better sleep and wellness." />
           </div>
         </div>
       </section>
@@ -290,15 +290,15 @@ const About = () => {
         
         <div className="max-w-[1280px] mx-auto relative z-10">
           <div className="text-center mb-16">
-            <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">// Physical Laws</span>
+            <span className="font-['Cinzel'] text-xs tracking-[0.4em] text-[#C9A14A] font-bold uppercase block mb-4">Scientific Basis</span>
             <h2 className="font-['Cormorant_Garamond'] text-4xl lg:text-5xl font-light">The Science of Earth Energetics</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { icon: ShieldAlert, t: "Geopathic Radiation", d: "Neutralizing energy friction originating from subterranean water veins and tectonic slips." },
-              { icon: Layers, t: "Telluric Lattice", d: "Plotting Hartmann & Curry grid patterns to prevent stress knots inside structural anchors." },
-              { icon: RefreshCw, t: "Vibrational Reset", d: "Clearing historical property memory profiles for a neutral, high-capacity baseline." }
+              { icon: ShieldAlert, t: "Geopathic Stress", d: "Finding and blocking harmful energy lines caused by underground water and rock cracks." },
+              { icon: Layers, t: "Hartmann & Curry Grids", d: "Mapping grid networks on the plot to prevent placing beds or desks on stressful nodes." },
+              { icon: RefreshCw, t: "Energy Clearing", d: "Clearing stored historical memory from the property to make it feel fresh and clean." }
             ].map((item, i) => (
               <div key={i} className="text-center border border-white/10 p-10 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-500">
                 <item.icon className="w-10 h-10 text-[#C9A14A] mx-auto mb-6 stroke-[1px]" />
@@ -315,15 +315,15 @@ const About = () => {
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-24">
             <div className="lg:col-span-5">
-              <span className="font-['Cinzel'] text-xs tracking-[0.3em] text-[#C9A14A] font-bold uppercase block mb-6">// Validated Outcomes</span>
+              <span className="font-['Cinzel'] text-xs tracking-[0.3em] text-[#C9A14A] font-bold uppercase block mb-6">Proven Results</span>
               <div className="space-y-12">
                 <div>
-                  <span className="font-['Cormorant_Garamond'] text-7xl font-light text-[#111111] block mb-2">18%</span>
-                  <p className="text-sm tracking-widest uppercase text-zinc-400 font-bold">Human Efficiency Surge</p>
+                  <span className="font-['Cormorant_Garamond'] text-7xl font-light text-[#111111] block mb-2">42%</span>
+                  <p className="text-sm tracking-widest uppercase text-zinc-400 font-bold">Productivity Boost</p>
                 </div>
                 <div>
-                  <span className="font-['Cormorant_Garamond'] text-7xl font-light text-[#111111] block mb-2">40%</span>
-                  <p className="text-sm tracking-widest uppercase text-zinc-400 font-bold">Maintenance Drop</p>
+                  <span className="font-['Cormorant_Garamond'] text-7xl font-light text-[#111111] block mb-2">60%</span>
+                  <p className="text-sm tracking-widest uppercase text-zinc-400 font-bold">Fewer Machine Breakdowns</p>
                 </div>
               </div>
             </div>
@@ -332,11 +332,11 @@ const About = () => {
               <div className="bg-white p-12 rounded-3xl shadow-sm border border-[#C9A14A]/10 relative">
                 <Quote className="absolute top-8 right-8 w-12 h-12 text-[#C9A14A]/10" />
                 <p className="font-['Cormorant_Garamond'] text-2xl italic text-zinc-600 leading-relaxed font-light mb-8">
-                  "Following the complete audit and structural correction executed by Vrihad Vastu, unplanned machinery downtime vanished completely. The atmosphere is anchored."
+                  "After Vrihad Vastu scanned our factory floor and placed remedies, machine breakdowns stopped completely. The work environment feels peaceful and productive."
                 </p>
                 <div>
-                  <span className="block font-['Cinzel'] text-xs tracking-widest font-bold text-[#111111] uppercase">Director of Engineering</span>
-                  <span className="block text-[10px] text-zinc-400 font-bold uppercase mt-1 tracking-wider">Heavy Manufacturing Cluster</span>
+                  <span className="block font-['Cinzel'] text-xs tracking-widest font-bold text-[#111111] uppercase">Factory Owner</span>
+                  <span className="block text-[10px] text-zinc-400 font-bold uppercase mt-1 tracking-wider">Industrial Client</span>
                 </div>
               </div>
             </div>
@@ -349,18 +349,18 @@ const About = () => {
             <div className="absolute inset-0 bg-[#C9A14A]/5 opacity-50" />
             <div className="relative z-10">
               <h2 className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl font-light text-white mb-8">
-                Calibrate Your Asset Into a <br />
-                <span className="italic text-[#C9A14A]">Performance Zone</span>
+                Improve the Energy of <br />
+                <span className="italic text-[#C9A14A]">Your Space</span>
               </h2>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <Link to="/contact">
                   <button className="px-10 py-4 bg-[#C9A14A] text-[#111111] font-['Cinzel'] text-xs font-bold tracking-[0.2em] hover:bg-white transition-all duration-300">
-                    Book Structural Audit
+                    Book an Energy Audit
                   </button>
                 </Link>
                 <Link to="/contact">
                   <button className="px-10 py-4 border border-white/20 text-white font-['Cinzel'] text-xs font-bold tracking-[0.2em] hover:bg-[#C9A14A] hover:border-[#C9A14A] hover:text-[#111111] transition-all duration-300">
-                    Consult Specialist
+                    Get in Touch
                   </button>
                 </Link>
               </div>
@@ -372,7 +372,7 @@ const About = () => {
       {/* FOOTER */}
       <footer className="py-12 text-center bg-white border-t border-[#C9A14A]/10">
         <p className="text-[10px] tracking-[0.4em] text-zinc-400 font-bold uppercase">
-          © 2026 Vrihad Vastu // Engineered Environmental Resonance
+          © 2026 Vrihad Vastu // Vedic Architecture & Earth Energetics
         </p>
       </footer>
     </div>

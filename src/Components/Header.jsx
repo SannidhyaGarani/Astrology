@@ -30,9 +30,9 @@ const PremiumNavbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/', id: '01' },
-    { name: 'About Matrix', path: '/about', id: '02' },
-    { name: 'Core Services', path: '/services', id: '03' },
-    { name: 'Contact Protocol', path: '/contact', id: '04' }
+    { name: 'About', path: '/about', id: '02' },
+    { name: 'Services', path: '/services', id: '03' },
+    { name: 'Contact', path: '/contact', id: '04' }
   ];
 
   // Animation variants for mobile menu items
@@ -160,7 +160,7 @@ const PremiumNavbar = () => {
               >
                 <div className="mb-4">
                   <span className="text-[#C9A14A] text-[9px] tracking-[0.4em] font-bold uppercase font-['Inter'] block">
-                    // Navigation Index
+                    Navigation
                   </span>
                   <div className="w-12 h-[1px] bg-[#C9A14A]/30 mt-4" />
                 </div>
@@ -186,7 +186,7 @@ const PremiumNavbar = () => {
                 <motion.div variants={linkVars} className="mt-12 overflow-hidden">
                   <Link to="/contact" className="block">
                     <button className="w-full py-5 bg-[#111111] text-white text-[10px] font-bold font-['Cinzel'] tracking-[0.3em] uppercase active:bg-[#C9A14A] transition-colors duration-300">
-                      Initialize Consultation
+                      Book a Consultation
                     </button>
                   </Link>
                 </motion.div>
@@ -195,7 +195,7 @@ const PremiumNavbar = () => {
                 <motion.div variants={linkVars} className="absolute bottom-10 left-6 sm:left-12 flex items-center gap-3">
                   <span className="w-2 h-2 bg-[#C9A14A]" />
                   <span className="text-[9px] tracking-[0.3em] font-['Inter'] text-zinc-400 font-bold uppercase">
-                    Global Protocol Online
+                    Vrihad Vastu · Est. 2000
                   </span>
                 </motion.div>
 

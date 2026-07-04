@@ -88,21 +88,21 @@ const VastuHero = () => {
           <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-4">
             <div className="h-[1px] w-12 bg-[#C9A14A]"></div>
             <span className="font-['Cinzel'] text-sm tracking-[0.4em] text-[#C9A14A] uppercase font-bold">
-              Architecture + Vastu Shastra
+              Vedic Architecture + Earth Energetics
             </span>
             <div className="h-[1px] w-6 bg-[#C9A14A] lg:hidden"></div>
           </motion.div>
 
           {/* Premium Editorial Typography */}
           <motion.h1 variants={itemVariants} className="font-['Cormorant_Garamond'] text-5xl sm:text-6xl xl:text-7xl leading-[1.08] text-[#111111] font-light drop-shadow-sm">
-            Engineering <br className="hidden lg:block" />
+            Where Ancient Wisdom <br className="hidden lg:block" />
             <span className="italic text-[#C9A14A] font-normal">
-              Energetic Balance
+              Meets Modern Science
             </span>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-gray-700 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-            We align the 16 architectural zones of your space with the 5 natural element matrices, drafting a precise roadmap for legacy, prosperity, and wellness.
+            Vrihad Vastu (Est. 2000) blends the ancient wisdom of Vastu Shastra with the modern science of Earth Energetics — helping homes, factories, and offices become healthier, more productive spaces.
           </motion.p>
 
           {/* Minimalist Elements Dot Array */}
@@ -121,12 +121,12 @@ const VastuHero = () => {
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mt-4 justify-center lg:justify-start">
             <Link to="/contact">
               <button className="w-full sm:w-auto px-10 py-4 bg-[#1A1A1A] text-[#FAF9F5] font-['Cinzel'] tracking-widest text-sm shadow-[0_12px_30px_rgba(26,26,26,0.2)] hover:bg-[#C9A14A] hover:shadow-[0_12px_30px_rgba(201,161,74,0.35)] transition-all duration-500 font-medium">
-                Inquire Now
+                Book Consultation
               </button>
             </Link>
             <Link to="/services">
               <button className="w-full sm:w-auto px-10 py-4 border-2 border-[#C9A14A] text-[#C9A14A] bg-white/60 font-['Cinzel'] tracking-widest text-sm hover:bg-[#C9A14A] hover:text-white transition-all duration-500 backdrop-blur-md">
-                Map Planning
+                Our Services
               </button>
             </Link>
           </motion.div>
@@ -245,9 +245,9 @@ const VastuHero = () => {
             >
               <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.7)]" />
               <div>
-                <p className="text-sm tracking-[0.2em] text-gray-500 font-['Cinzel'] uppercase font-bold">Earth Energy</p>
+                <p className="text-sm tracking-[0.2em] text-gray-500 font-['Cinzel'] uppercase font-bold">Est. 2000</p>
                 <p className="text-sm sm:text-base text-[#1A1A1A] font-['Cormorant_Garamond'] font-bold leading-none mt-0.5">
-                  95% <span className="text-[#C9A14A]">Resonant</span>
+                  Vrihad <span className="text-[#C9A14A]">Vastu</span>
                 </p>
               </div>
             </motion.div>
@@ -259,9 +259,9 @@ const VastuHero = () => {
             >
               <span className="text-[#C9A14A] text-sm font-bold">✧</span>
               <div>
-                <p className="text-sm tracking-[0.2em] text-gray-500 font-['Cinzel'] uppercase font-bold">Map Planning</p>
+                <p className="text-sm tracking-[0.2em] text-gray-500 font-['Cinzel'] uppercase font-bold">Land Healing</p>
                 <p className="text-sm sm:text-base text-[#1A1A1A] font-['Cormorant_Garamond'] font-bold leading-none mt-0.5">
-                  16 Zone <span className="text-[#C9A14A]">Analysis</span>
+                  3-Step <span className="text-[#C9A14A]">Protocol</span>
                 </p>
               </div>
             </motion.div>

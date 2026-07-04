@@ -14,23 +14,23 @@ const ProcessSection = () => {
     {
       index: "01",
       title: "Scan",
-      subtitle: "Telluric Topology Mapping",
+      subtitle: "Full Site Survey",
       icon: Radar,
-      desc: "Deep matrix tracking across subterranean water vectors, fault fissures, and global grid intersecting networks to register foundational disruptions.",
+      desc: "We visit your property and scan the entire land using special tools. We look for underground water, rock cracks, and harmful energy grid crossings that most people cannot see or feel.",
     },
     {
       index: "02",
       title: "Analyze",
-      subtitle: "Resonance Frequency Audit",
+      subtitle: "Find the Root Cause",
       icon: BarChart3,
-      desc: "Quantifying localized micro-vibrational anomalies down to specific Hz outputs using calibrated electronic Lecher spectrum sensors.",
+      desc: "We overlay our scan results onto your building plan. This helps us find exactly which room or zone is affected and what is causing the problem — whether it's a geopathic stress line or a Vastu imbalance.",
     },
     {
       index: "03",
       title: "Harmonize",
-      subtitle: "Geometric Field Realignment",
+      subtitle: "Fix Without Demolition",
       icon: Wind,
-      desc: "Deploying structural neutralizing resonators to clear geopathic tension loops, restoring the location to pristine Golden Ratio alignment.",
+      desc: "We fix the problem without breaking walls or moving heavy machines. We use Energy Rods, Yantras, Crystals, and metal strips placed at key positions to block or transform the harmful energy.",
     }
   ];
 
@@ -45,16 +45,16 @@ const ProcessSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-24 lg:mb-32 items-end">
           <div className="lg:col-span-7">
             <span className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-4">
-              Systematic Protocol
+              Our 3-Step Process
             </span>
             <h2 className="font-['Cormorant_Garamond'] text-5xl sm:text-7xl text-[#111111] font-light leading-[1.05] tracking-tight">
-              The Architecture <br />
-              of <span className="italic text-[#C9A14A] font-normal">Spatial Correctives</span>
+              Simple Steps <br />
+              to a <span className="italic text-[#C9A14A] font-normal">Healthier Space</span>
             </h2>
           </div>
           <div className="lg:col-span-5 border-l border-[#C9A14A]/25 pl-6 lg:pl-10 py-2">
             <p className="font-['Inter'] text-sm text-gray-500 leading-relaxed font-light max-w-sm">
-              We apply absolute engineering clarity to energetic disturbances, transitioning environmental metrics from chaotic stress configurations into harmonic stability.
+              We follow a clear three-step process: scan the land, find the problem, and fix it — all without demolition or construction.
             </p>
           </div>
         </div>
@@ -120,22 +120,22 @@ const ToolsSection = () => {
   const tools = [
     {
       name: "Lecher Antenna",
-      role: "Vibrational Metric Capture",
-      desc: "High-precision structural calibration module tuned to capture ultra-fine variations in global Hartmann/Curry lattice configurations and identify active water vein friction patterns.",
+      role: "Energy Field Measurement",
+      desc: "The Lecher Antenna is a scientific instrument used to measure subtle energy fields. Ashish Singhai uses it to detect the exact location of Geopathic Stress lines, Hartmann and Curry grid crossings, and the energy level of each room.",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070",
       icon: Activity
     },
     {
       name: "Universal Aura Scanner",
-      role: "Quantum Shield Diagnostics",
-      desc: "Advanced visual diagnostic node calibrated to project electromagnetic boundary fields, mapping structural density gaps across modern residential or industrial assets.",
+      role: "Energy Field Visualiser",
+      desc: "The Universal Aura Scanner measures the energy field around a person, object, or building. We use it to check the energy quality of a plot before you buy it, and to show clients the visible improvement after we complete our healing work.",
       image: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?q=80&w=2070",
       icon: ShieldCheck
     },
     {
-      name: "Esmog Quantifier",
-      role: "High-Tension Wave Audit",
-      desc: "Digital signature tracking framework engineered to systematically evaluate high-frequency ambient radiation leaks and high-voltage line interference variables.",
+      name: "Digital EMF Meter",
+      role: "Radiation Level Check",
+      desc: "This device measures harmful electromagnetic radiation (EMF) from Wi-Fi routers, power lines, and wiring inside walls. We use it to identify radiation hotspots in bedrooms and workspaces and create safe, low-radiation zones.",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974",
       icon: Radio
     }
@@ -151,10 +151,10 @@ const ToolsSection = () => {
         <div className="border-b border-[#C9A14A]/20 pb-10 mb-16 lg:mb-24 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
             <span className="font-['Cinzel'] text-sm tracking-[0.5em] text-[#C9A14A] font-bold uppercase block mb-3">
-              Scientific Diagnostic Suite
+              Our Tools
             </span>
             <h2 className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl text-[#111111] font-light leading-none tracking-tight">
-              Proprietary <span className="italic text-[#C9A14A] font-normal">Instrumentation</span>
+              Scientific <span className="italic text-[#C9A14A] font-normal">Instruments</span>
             </h2>
           </div>
           
@@ -264,7 +264,7 @@ const ToolsSection = () => {
         {/* Global Structural Verification Footer Block */}
         <div className="mt-24 sm:mt-32 pt-10 border-t border-[#C9A14A]/15 flex flex-wrap justify-between items-center gap-6">
           <div className="flex flex-wrap gap-x-12 gap-y-4">
-            {["Precision Verified", "Resonance Certified", "Quantum Standard"].map((tag, idx) => (
+            {["Precision Verified", "Trusted Since 2000", "No Demolition Needed"].map((tag, idx) => (
               <div key={idx} className="flex items-center gap-2.5">
                 <div className="w-1.5 h-1.5 bg-[#C9A14A]" />
                 <span className="text-sm tracking-[0.35em] font-bold text-gray-400 uppercase font-['Inter']">{tag}</span>
@@ -272,7 +272,7 @@ const ToolsSection = () => {
             ))}
           </div>
           <span className="font-['Inter'] text-sm text-gray-400 uppercase tracking-widest hidden md:inline">
-            EE-LAB CORE PROTOCOL // 2026
+            VRIHAD VASTU // EST. 2000
           </span>
         </div>
 

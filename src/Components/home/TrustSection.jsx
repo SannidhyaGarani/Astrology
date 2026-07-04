@@ -44,7 +44,7 @@ const FinalCTA = () => {
             transition={{ duration: 0.6 }}
             className="font-['Cinzel'] text-sm tracking-[0.6em] text-[#C9A14A] font-bold uppercase block mb-5"
           >
-            Begin Your Alignment
+            Start Your Journey
           </motion.span>
 
           {/* Main Headline */}
@@ -54,8 +54,8 @@ const FinalCTA = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl text-[#1A1A1A] mb-8 leading-[1.1] font-medium italic"
           >
-            Transform Your Space <br />
-            <span className="not-italic font-light text-[#C9A14A]">Into A Power Zone</span>
+            Make Your Space <br />
+            <span className="not-italic font-light text-[#C9A14A]">Work For You</span>
           </motion.h2>
 
           <motion.div
@@ -67,8 +67,7 @@ const FinalCTA = () => {
 
           {/* Description */}
           <p className="font-['Inter'] text-gray-500 text-lg max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-            Step into a environment where the Earth's energy supports your ambition. 
-            Map your resonance and clear the path for peak human performance.
+            Whether it's a home, office, or factory — Vrihad Vastu helps you identify hidden energy problems and fix them without demolition. Get a healthier, more productive space starting from the ground up.
           </p>
 
           {/* Buttons */}
